@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>web-page</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
+  <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
+  <!--style.css-->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script> 
+  <!--ionicon-->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data.trim();
+          document.body.insertBefore(tempDiv.firstChild, document.body.firstChild);
+          addMenuToggleEvent();
+        })
+        .catch(error => console.error('Error loading header:', error));
+    });
+
+  </script>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div class="inner">
+      <header></header>
+      <section>
+        <div class="slide-nav">
+          <div class="webpage-back">
+            <a href="webpage-inner-nikevideo.html">
+              <ion-icon name="arrow-back"></ion-icon>
+              <p>NIKE VIDEO + PRODUCT Randing Page</p>
+            </a>
+
+          </div>
+          <div class="webpage-current">
+            <a href="">home</a>
+            <ion-icon name="arrow-dropright"></ion-icon>
+            <a href="">web page</a>
+            <ion-icon name="arrow-dropright"></ion-icon>
+            <a href="#none">BOSE</a>
+            <h2>BOSE WEB PAGE</h2>
+          </div>
+          <div class="webpage-forward">
+            <a href="webpage-inner-odense.html">
+              <p>ODENSE Randing Page</p>
+              <ion-icon name="arrow-forward"></ion-icon>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="my-slideshow uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: auto;autoplay: true;autoplay-interval: 3000;">
+          <!--autoplay: true;autoplay-interval: 3000-->
+          <ul class="uk-slideshow-items">
+            <img src="images/webpage-bose1.png" alt="bose">
+            <img src="images/webpage-bose2.png" alt="bose">
+            <img src="images/webpage-bose3.png" alt="bose">
+            <!--<li>
+              <a href="#none"></a>
+            </li>
+            <li>
+              <a href="#none"></a>
+            </li>
+            <li>
+              <a href="#none"></a>
+            </li>-->
+          </ul>
+
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+        </div>
+      </section>
+
+      <section class="project-explanation">
+        <article>
+          <div class="project-description">
+            <h4>'BOSE' Website</h4>
+            웹사이트 'BOSE'의 landing page를 만듬<br>
+            'BOSE'는 헤드셋, 이어폰, 스피커 등의 음향기기 브랜드입니다. 애플과 비슷한 홈페이지 느낌의 외국 브랜드로 전체적으로 심플한 느낌을 주는것이 보기 좋은 홈페이지라는 생각이 들었습니다.<br>하드코딩과 ui-kit를 함께 사용하여 제작하였습니다.
+            <br><br>
+            <span>[ 기여도 100% ]</span>
+          </div>
+        </article>
+        <article>
+          <div class="project-details">
+            <ul>
+              <li><b>name</b> BOSE</li>
+              <li><b>date</b> 2019 08 18</li>
+              <li><b>skills</b> DESIGN + BRAND + WEBSITE + HTML + CSS + jQuery + Script</li>
+              <li><b>project URL</b>
+                
+                <a class="details-btn uk-button uk-button-default" href="#modal-full" uk-toggle>CLICK !</a>
+
+                <div id="modal-full" class="uk-modal-full" uk-modal>
+                    <div class="my-modal uk-modal-dialog modal-sample">
+                        <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                          <iframe src="portfolio/webpage/bose_landing_190701/index.html" frameborder="0"></iframe>
+                    </div>
+                </div>
+                
+                <a class="btn-url-link" href="portfolio/webpage/bose_landing_190701/index.html">( http://www.bose.com )</a>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </div>
+  </div>
+
+</body></html>

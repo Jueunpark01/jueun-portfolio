@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>web-page</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
+  <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
+  <!--style.css-->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script> 
+  <!--ionicon-->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data.trim();
+          document.body.insertBefore(tempDiv.firstChild, document.body.firstChild);
+          addMenuToggleEvent();
+        })
+        .catch(error => console.error('Error loading header:', error));
+    });
+
+  </script>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div class="inner">
+      <header></header>
+      <section>
+        <div class="slide-nav">
+          <div class="webpage-back">
+            <a href="webpage-inner-neiborhood.html">
+              <ion-icon name="arrow-back"></ion-icon>
+              <p>NEIGHBORHOOD Randing Page</p>
+            </a>
+
+          </div>
+          <div class="webpage-current">
+            <a href="">home</a>
+            <ion-icon name="arrow-dropright"></ion-icon>
+            <a href="">web page</a>
+            <ion-icon name="arrow-dropright"></ion-icon>
+            <a href="#none">NH BANK</a>
+            <h2>NH BANK WEB PAGE</h2>
+          </div>
+          <div class="webpage-forward">
+            <a href="webpage-inner-google.html">
+              <p>GOOGLE - CHROME Randing Page</p>
+              <ion-icon name="arrow-forward"></ion-icon>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="my-slideshow uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: auto;autoplay: true;autoplay-interval: 3000;">
+          <!--autoplay: true;autoplay-interval: 3000-->
+          <ul class="uk-slideshow-items">
+            <img src="images/webpage-nh1.png" alt="">
+            <img src="images/webpage-nh2.png" alt="">
+            <!--<li>
+              <a href="#none"></a>
+            </li>
+            <li>
+              <a href="#none"></a>
+            </li>
+            <li>
+              <a href="#none"></a>
+            </li>-->
+          </ul>
+
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+        </div>
+      </section>
+
+      <section class="project-explanation">
+        <article>
+          <div class="project-description">
+            <h4>'NH BANK'</h4>
+            'NH BANK'의 landing page를 만들었습니다.<br>
+            농협은행의 메인페이지를 하드코딩을 이용해 제작했습니다.<br>쇼핑몰보다 은행같이 공기관의 사이트는 사용자가 사이트에 들어왔을 때 더욱 간편해야하고, 쉬운 이해도와 네비게이션의 이동이 간편해야한다 생각했기때문에,이에 적합하다고 생각한 농협사이트를 제작해봤습니다. <br><br>
+            <span>[ 기여도 100% ]</span>
+            
+            
+          </div>
+        </article>
+        <article>
+          <div class="project-details">
+            <ul>
+              <li><b>name</b> NH BANK</li>
+              <li><b>date</b> 2019 07 25</li>
+              <li><b>skills</b> DESIGN + BRAND + WEBSITE + HTML + CSS + jQuery</li>
+              <li><b>project URL</b>
+                
+                <a class="details-btn uk-button uk-button-default" href="#modal-full" uk-toggle>CLICK !</a>
+
+                <div id="modal-full" class="uk-modal-full" uk-modal>
+                    <div class="my-modal uk-modal-dialog modal-sample">
+                        <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                          <iframe src="portfolio/webpage/nh_Bank_landing_190715/index.html" frameborder="0"></iframe>
+                    </div>
+                </div>
+                
+                <a class="btn-url-link" href="portfolio/webpage/nh_Bank_landing_190715/index.html">[ http://www.NH BANK.com ]</a>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </div>
+  </div>
+
+</body></html>

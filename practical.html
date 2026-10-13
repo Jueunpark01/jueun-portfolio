@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>HTML CSS JQuery</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
+   <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script> 
+  <!--ionicon-->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data.trim();
+          document.body.insertBefore(tempDiv.firstChild, document.body.firstChild);
+          addMenuToggleEvent();
+        })
+        .catch(error => console.error('Error loading header:', error));
+    });
+
+    function addMenuToggleEvent() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  menuToggle.addEventListener('click', function() {
+    menu.classList.toggle('open');
+  });
+
+  // Close menu when a menu item is clicked
+  menu.querySelectorAll('.menuitem').forEach(item => {
+    item.addEventListener('click', function() {
+      menu.classList.remove('open');
+    });
+  });
+}
+  </script>
+  <style>
+    .container {
+      display: contents;
+    }
+  </style>
+</head>
+<body>
+ 
+ 
+  <div class="container">
+   <div class="header-inner">
+    <header></header>
+      </div>
+    
+    <div class="item-lightbox" uk-lightbox>
+      <div class="item-group">
+    <div class="item">
+      <h3>01.</h3>
+      <div class="item-hover">
+        <span></span>
+        <span></span>
+        <a href="portfolio/practical/css-photo-gallery/index.html"><img src="images/practical5.png"></a>
+      </div>
+      <h4>calculator</h4>
+    </div>
+    <div class="item">
+      <h3>02.</h3>
+      <div class="item-hover">
+        <span></span>
+        <span></span>
+        <a href="portfolio/practical/3d-glass-layer-hover/3d-glass-layer-hover.html"><img src="images/practical1.png"></a>
+      </div>
+      <h4>3D App UI</h4>
+    </div>
+    <div class="item">
+      <h3>03.</h3>
+      <div class="item-hover">
+        <span></span>
+        <span></span>
+        <a href="portfolio/practical/3d-app-ui/index.html"><img src="images/practical2.png"></a>
+      </div>
+      <h4>animated-login-form</h4>
+    </div>
+    <div class="item">
+      <h3>04.</h3>
+      <div class="item-hover">
+        <span></span>
+        <span></span>
+        <a href="portfolio/practical/product-view-overlay2/index.html"><img src="images/practical29.png"></a>
+      </div>
+      <h4>card-hover-effect</h4>
+    </div>
+  </div>
+      <div class="item-group">
+        <div class="item">
+          <h3>05.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/neon/index.html"><img src="images/practical26.png"></a>
+          </div>
+          <h4>card-hover-effect</h4>
+        </div>
+        <div class="item">
+          <h3>06.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/Glendalough/index.html"><img src="images/practical27.png"></a>
+          </div>
+          <h4>inspiration</h4>
+        </div>
+        <div class="item">
+          <h3>07.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/fullscreen-toggle-navigation/fullscreen-toggle-navi.html"><img src="images/practical25.png"></a>
+          </div>
+          <h4>photo gallery</h4>
+        </div>
+        <div class="item">
+          <h3>08.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/skill-progress-bar/index.html"><img src="images/practical36.png"></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+      </div>
+      <div class="item-group">
+        <div class="item">
+          <h3>09.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/profile-card/index.html"><img src="images/practical32.png"></a>
+          </div>
+          <h4>images</h4>
+        </div>
+        <div class="item">
+          <h3>10.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/price-table-fancy-design/index.html"><img src="images/practical30.png"></a>
+          </div>
+          <h4>inspiration</h4>
+        </div>
+        <div class="item">
+          <h3>11.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/product-list/index.html"><img src="images/practical31.png"></a>
+          </div>
+          <h4>performance</h4>
+        </div>
+        <div class="item">
+          <h3>12.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/card-hover-effect/card-hover-effect.html"><img src="images/practical10.png"></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+      </div>
+      <div class="item-group">
+        <div class="item">
+          <h3>13.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/card-hover-effects/index.html"><img src="images/practical4.png"></a>
+          </div>
+          <h4>images</h4>
+        </div>
+        <div class="item">
+          <h3>14.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/sliding-text-ani/sliding-text-animation.html"><img src="images/practical37.png"></a>
+          </div>
+          <h4>inspiration</h4>
+        </div>
+        <div class="item">
+          <h3>15.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/photo-gallery/index.html"><img src="images/practical46.png"></a>
+          </div>
+          <h4>performance</h4>
+        </div>
+        <div class="item">
+          <h3>16.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/naver-hover-navigation/naver-hover-navigation.html"><img src="images/practical42.png"></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+      </div>
+      <div class="item-group">
+        <div class="item">
+          <h3>17.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/animation-1/ani-loder1.html"><img src="images/practical20.png"></a>
+          </div>
+          <h4>images</h4>
+        </div>
+        <div class="item">
+          <h3>18.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/animation-sound/animation04-wave.html"><img src="images/practical21.png"></a>
+          </div>
+          <h4>inspiration</h4>
+        </div>
+        <div class="item">
+          <h3>19.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/profile-card02/index.html"><img src="images/songkangcoding.png"></a>
+          </div>
+          <h4>performance</h4>
+        </div>
+        <div class="item">
+          <h3>20.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/calculator/calculator.html"><img src="images/practical3.png"></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+      </div>
+      <div class="item-group">
+        <div class="item">
+          <h3>21.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/3d-sns-icon-hover/index.html"><img src="images/practical888.png"></a>
+          </div>
+          <h4>images</h4>
+        </div>
+        <div class="item">
+          <h3>22.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/animation-heart/ani.loder2.html"><img src="images/practical43.png"></a>
+          </div>
+          <h4>inspiration</h4>
+        </div>
+        <div class="item">
+          <h3>23.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/user-input/user.html"><img src="images/practical44.png"></a>
+          </div>
+          <h4>performance</h4>
+        </div>
+        <div class="item">
+          <h3>24.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/animation-profile/testimonial01.html"><img src="images/practical22.png"></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+        <div class="item">
+          <h3>25.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/dual-button/index.html"><img src="images/practical24.png"></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+        <div class="item">
+          <h3>26.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/product-overay/index.html"><img src="images/practical28.png"></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+        <div class="item">
+          <h3>27.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/animated-login-form2/index.html"><img src="images/practical33.png"></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+        <div class="item">
+          <h3>28.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/wemakeprice-pick/index.html"><img src="images/practical40.png"></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+        <div class="item">
+          <h3>29.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/shopingmall-reper-site/index.html"><img src="images/practical35.png"></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+        <div class="item">
+          <h3>30.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/tool-tip2/index.html"><img src="images/practical39.png"></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+        <div class="item">
+          <h3>31.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/SNS-click-view/index.html"><img src="images/practical38.png"></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+        <div class="item">
+          <h3>32.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/ybm-dropdown-header/index.html"><img src="images/practical41.png"></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+        <div class="item">
+          <h3>33.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/mobile-engilshcamp/mobile-englishcamp-uikit.html"><img src="images/practical45.png"></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+        <div class="item">
+          <h3>34.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/custom-checkbox/custom-radio.html"><img src="images/practical13.png"></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+        <div class="item">
+          <h3>35.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/badge-widget-ui/index.html"><img src="images/practical9.png"></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+        <div class="item">
+          <h3>36.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href="portfolio/practical/dropdown-side-navigation/index.html"><img src="images/practical23.png"></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+ 
+      </div>
+    </div>
+  </div>
+  
+  
+</body>
+</html>

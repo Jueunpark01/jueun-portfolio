@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>web-page</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
+  <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
+  <!--style.css-->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/mockup-css.css">
+  <script src="js/script.js" defer></script> 
+  <!--ionicon-->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data.trim();
+          document.body.insertBefore(tempDiv.firstChild, document.body.firstChild);
+          addMenuToggleEvent();
+        })
+        .catch(error => console.error('Error loading header:', error));
+    });
+
+  </script>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div class="inner">
+      <header></header>
+      <section>
+        <div class="slide-nav">
+          <div class="webpage-back">
+            <a href="mobile-page-foodman.html">
+              <ion-icon name="arrow-back"></ion-icon>
+              <p>배달의 민족 Mobile App</p>
+            </a>
+
+          </div>
+          <div class="webpage-current">
+            <a href="">home</a>
+            <ion-icon name="arrow-dropright"></ion-icon>
+            <a href="">Moblie</a>
+            <ion-icon name="arrow-dropright"></ion-icon>
+            <a href="#none">Hermes</a>
+            <h2>Hermes MOBILE</h2>
+          </div>
+          <div class="webpage-forward">
+            <a href="mobile-page-bluebottle.html">
+              <p>BLUE-BOTTLE Mobile App</p>
+              <ion-icon name="arrow-forward"></ion-icon>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="my-slideshow uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: auto;autoplay: true;autoplay-interval: 3000;">
+          <!--autoplay: true;autoplay-interval: 3000-->
+          <ul class="uk-slideshow-items">
+            <img src="images/mobile-hermes-main.png" alt="">
+            <img src="images/mobile-hermes-main-1.png" alt="">
+            
+            <!--<li>
+              <a href="#none"></a>
+            </li>
+            <li>
+              <a href="#none"></a>
+            </li>
+            <li>
+              <a href="#none"></a>
+            </li>-->
+          </ul>
+
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+        </div>
+      </section>
+
+      <section class="project-explanation">
+        <article>
+          <div class="project-description">
+            <h4>'Hermes' Mobile App</h4>
+            모바일 버전으로 'Hermes' 브랜드 페이지를 디자인해서 만들었습니다.<br>
+            에르메스라는 패션 브랜드의 모바일 버전 페이지를 리디자인 했습니다.<br> 패션브랜드 답게 촌스럽지않으면서 심플한 디자인을 하기위해 최대한의 텍스트를 줄였으며<br>로그인페이지와, 메인페이지, 상품페이지, 상품상세페이지를 하드코딩으로 제작하였습니다.
+          </div>
+        </article>
+        <article>
+          <div class="project-details">
+            <ul>
+              <li><b>name</b> HERMES</li>
+              <li><b>date</b> 2019 08 10</li>
+              <li><b>skills</b> DESIGN + BRAND + MOBILE + HTML + CSS + jQuery</li>
+              <li><b>project URL</b>
+
+                <a class="details-btn uk-button uk-button-default" href="#modal-full" uk-toggle>CLICK !</a>
+
+                <div id="modal-full" class="uk-modal-full" uk-modal>
+                  <div class="my-modal uk-modal-dialog modal-sample">
+                    <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                      <iframe src="portfolio/mobile/iphone7,8/mobile-mockup-ui-design1/index.html" frameborder="0"></iframe>
+                  </div>
+                </div>
+
+<!--                <a class="btn-url-link" href="portfolio/mobile/iphone7,8/mobile-mockup-ui-design1/index.html">( http://www.hermes.com )</a>-->
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </div>
+  </div>
+
+</body></html>

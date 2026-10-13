@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>web-page</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
+  <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
+  <!--style.css-->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script> 
+  <!--ionicon-->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data.trim();
+          document.body.insertBefore(tempDiv.firstChild, document.body.firstChild);
+          addMenuToggleEvent();
+        })
+        .catch(error => console.error('Error loading header:', error));
+    });
+
+  </script>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div class="inner">
+      <header></header>
+      <section>
+        <div class="slide-nav">
+          <div class="webpage-back">
+            <a href="webpage-inner-google.html">
+              <ion-icon name="arrow-back"></ion-icon>
+              <p>GOOGLE Randing Page</p>
+            </a>
+
+          </div>
+          <div class="webpage-current">
+            <a href="">home</a>
+            <ion-icon name="arrow-dropright"></ion-icon>
+            <a href="">web page</a>
+            <ion-icon name="arrow-dropright"></ion-icon>
+            <a href="#none">Apple</a>
+            <h2>Apple WEB PAGE</h2>
+          </div>
+          <div class="webpage-forward">
+            <a href="webpage-inner-login.html">
+              <p>LOGIN-PAGE Randing Page</p>
+              <ion-icon name="arrow-forward"></ion-icon>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="my-slideshow uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: auto;autoplay: true;autoplay-interval: 3000;">
+          <!--autoplay: true;autoplay-interval: 3000-->
+          <ul class="uk-slideshow-items">
+            <img src="images/webpage-apple1.png" alt="">
+            <img src="images/webpage-apple2.png" alt="">
+            <img src="images/webpage-apple3.png" alt="">
+            <!--<li>
+              <a href="#none"></a>
+            </li>
+            <li>
+              <a href="#none"></a>
+            </li>
+            <li>
+              <a href="#none"></a>
+            </li>-->
+          </ul>
+
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+        </div>
+      </section>
+
+      <section class="project-explanation">
+        <article>
+          <div class="project-description">
+            <h4>'Apple' Website</h4>
+            하드코딩으로 웹사이트 'Apple'의 landing page를 만들<br>
+            애플 홈페이지의 첫 화면은 단순합니다. 홈페이지 리뉴얼때마다 가장 최신 제품을 보여주고 몇가지 관련정보들을 쉽게 찾을 수 있도록 배치합니다. <br>
+            애플의 홈페이지에 배치된 작은 아이콘 같은 부분이 눈에 잘 띄는 것은 아니지만 작은 부분들을 매우 훌륭하게 디자인했습니다. 단순한 것 같지만 세심한 애플의 홈페이지는 큰 모션은 없지만 작은 모션들로 탄탄하게 페이지를 장식할 수 있습니다.
+            메뉴나 텍스트들의 언더라인에 작은 모션을 주어 간단하지만 세심함을 살려 제작했습니다.
+            <br><br>
+            <span>[ 기여도 100% ]</span>
+          </div>
+        </article>
+        <article>
+          <div class="project-details">
+            <ul>
+              <li><b>name</b> Apple</li>
+              <li><b>date</b> 2019 08 01</li>
+              <li><b>skills</b> DESIGN + BRAND + WEBSITE + HTML + CSS + jQuery</li>
+              <li><b>project URL</b>
+                
+                <a class="details-btn uk-button uk-button-default" href="#modal-full" uk-toggle>CLICK !</a>
+
+                <div id="modal-full" class="uk-modal-full" uk-modal>
+                    <div class="my-modal uk-modal-dialog modal-sample">
+                        <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                          <iframe src="portfolio/webpage/apple-landing/index.html" frameborder="0"></iframe>
+                    </div>
+                </div>
+                
+                <a class="btn-url-link" href="portfolio/webpage/apple-landing/index.html">[ http://www.apple.com ]</a>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </div>
+  </div>
+
+</body></html>

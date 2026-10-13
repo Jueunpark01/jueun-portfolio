@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>HTML CSS JQuery</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
+   <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script> 
+  <!--ionicon-->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data.trim();
+          document.body.insertBefore(tempDiv.firstChild, document.body.firstChild);
+          addMenuToggleEvent();
+        })
+        .catch(error => console.error('Error loading header:', error));
+    });
+
+    function addMenuToggleEvent() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  menuToggle.addEventListener('click', function() {
+    menu.classList.toggle('open');
+  });
+
+  // Close menu when a menu item is clicked
+  menu.querySelectorAll('.menuitem').forEach(item => {
+    item.addEventListener('click', function() {
+      menu.classList.remove('open');
+    });
+  });
+}
+  </script>
+  <style>
+    .container {
+      display: contents;
+      
+  height: 100vh;
+    }
+
+  </style>
+</head>
+<body>
+ 
+ <div class="container">
+    <div class="inner">
+      <header></header>
+      <section class="website">
+        <div class="inner">
+            <div class="title-prodution">
+              <h2>기여도 100%</h2>
+              <p>총 220개 이상의 website를 제작하였습니다.</p>
+            </div>
+            
+            <div class="scroll-items scroll-items1">
+            <div class="scroll-item scroll-item1">
+              <div>
+                <a href="http://dainhousing.com/" target='_blank'><img src="images/dainmain.jpg" alt=""></a>
+              </div>
+              <span>다인 하우징</span>
+            </div>
+            
+            <div class="scroll-item">
+              <div>
+                <a href="http://aonarchitecturedesign.com/" target='_blank'><img src="images/aonmin.jpg" alt=""></a>
+              </div>
+              <span>아온 건축 디자인</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://xn--vv4b17cghl0cuuj65c.com/" target='_blank'><img src="images/opetmaidn.jpg" alt=""></a>
+              </div>
+              <span>오펫에이전시</span>
+            </div>    
+            
+            </div>
+            <div class="scroll-items scroll-items3">
+            <div class="scroll-item">
+              <div>
+                <a href="http://www.kcnet.co.kr/" target='_blank'><img src="images/kcmain.jpg" alt=""></a>
+              </div>
+              <span>kcnet</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://julimpnt.com/" target='_blank'><img src="images/julimmain.jpg" alt=""></a>
+              </div>
+              <span>(주)주림피앤티</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://jmmobility.co.kr/" target='_blank'><img src="images/jmimg07.png" alt=""></a>
+              </div>
+              <span>JM 모빌리티</span>
+            </div>
+            </div>
+            <div class="scroll-items scroll-items4">
+              <div class="scroll-item scroll-item1">
+                <div>
+                  <a href="https://okpainfree.com/" target='_blank'><img src="images/okmain.jpg" alt=""></a>
+                </div>
+                <span>오케이365정형외과</span>
+              </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://polaristax.co.kr/" target='_blank'><img src="images/polamain.jpg" alt=""></a>
+              </div>
+              <span>폴라리스</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://xn--s22bu16b.com/" target='_blank'><img src="images/mentmain.jpg" alt=""></a>
+              </div>
+              <span>먼트</span>
+            </div>
+            </div>
+            <div class="scroll-items scroll-items5">
+            <div class="scroll-item">
+              <div>
+               <a href="http://wekcontents.com/" target='_blank'><img src="images/wekmain.jpg" alt=""></a>
+              </div>
+              <span>위케이 콘텐츠</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://xn--z92b19ji8dt5gqrn.kr/" target='_blank'><img src="images/soibmain.jpg" alt=""></a>
+              </div>
+              <span>순천 문화원</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://mobile-bgf-recruiter.co.kr/" target='_blank'><img src="images/bgtmomain.png" alt=""></a>
+              </div>
+              <span>BGH 리테일 (mobile)</span>
+            </div>
+            </div>
+         
+          <div class="scroll-items scroll-items7">
+            <div class="scroll-item">
+              <div>
+                <a href="https://thebesttt.com/" target='_blank'><img src="images/thebestmain.jpg" alt=""></a>
+              </div>
+              <span>더베스트</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://thekoreaconference.com/" target='_blank'><img src="images/theconmain.jpg" alt=""></a>
+              </div>
+              <span>더 코리아 컨퍼런스</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://woorieco.co.kr/" target='_blank'><img src="images/woorimain.jpg" alt=""></a>
+              </div>
+              <span>우리환경</span>
+            </div>
+          </div>
+          <div class="scroll-items scroll-items8">
+            <div class="scroll-item">
+              <div>
+                <a href="http://swfilter1.cafe24.com/" target='_blank'><img src="images/sinwoo.jpg" alt=""></a>
+              </div>
+              <span>신우 휠타 산업(주)</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://wordpress-788945-3015531.cloudwaysapps.com/" target='_blank'><img src="images/cookmain.jpg" alt=""></a>
+              </div>
+              <span>국선생 가맹점 사이트</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://soul-mate.co.kr/" target='_blank'><img src="images/soul.jpg" alt=""></a>
+              </div>
+              <span>소울 메이트</span>
+            </div>
+              </div>
+          <div class="scroll-items scroll-items9">
+            <div class="scroll-item">
+              <div>
+                <a href="http://gosucompany.com/" target='_blank'><img src="images/gosucom.jpg" alt=""></a>
+              </div>
+              <span>고수컴퍼니</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://jinpoongjeong.com/" target='_blank'><img src="images/jinpoonmain.jpg" alt=""></a>
+              </div>
+              <span>진풍정</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://dkeng1.co.kr/" target='_blank'><img src="images/dkengmain.jpg" alt=""></a>
+              </div>
+              <span>DK ENG</span>
+            </div>
+              </div>
+          <div class="scroll-items scroll-items9">
+            <div class="scroll-item">
+              <div>
+                <a href="http://deli-hanwool.com/" target='_blank'><img src="images/momommain.jpg" alt=""></a>
+              </div>
+              <span>모랑모랑</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://nuzzon1.cafe24.com/" target='_blank'><img src="images/nuzzmian.jpg" alt=""></a>
+              </div>
+              <span>누죤</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://wordpress-832681-2899274.cloudwaysapps.com/" target='_blank'><img src="images/lms1main.jpg" alt=""></a>
+              </div>
+              <span>직사부</span>
+            </div>
+              </div>
+             <div class="scroll-items scroll-items10">
+              <div class="scroll-item">
+              <div>
+                <a href="https://humanplanner.com/" target='_blank'><img src="images/humanmain.png" alt=""></a>
+              </div>
+              <span>휴먼 플래너</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://goldencare1.co.kr/" target='_blank'><img src="images/gfdoldmaiun.jpg" alt=""></a>
+              </div>
+              <span>골든 케어 컨설팅</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://solarawning.co.kr/" target='_blank'><img src="images/solmain.jpg" alt=""></a>
+              </div>
+              <span>솔라어닝</span>
+            </div>
+              </div>
+              
+          <div class="scroll-items scroll-items11">
+            <div class="scroll-item">
+              <div>
+                <a href="http://jjtourflex.cafe24.com/" target='_blank'><img src="images/jjmain.jpg" alt=""></a>
+              </div>
+              <span>JJ SPORTS</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://majaclass.com/" target='_blank'><img src="images/majamain.jpg" alt=""></a>
+              </div>
+              <span>마자 클래스</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://joyjeju1.cafe24.com/" target='_blank'><img src="images/sirumain.jpg" alt=""></a>
+              </div>
+              <span>시루원</span>
+            </div>
+              </div>
+          <div class="scroll-items scroll-items12">
+            <div class="scroll-item">
+              <div>
+                <a href="http://xn--oh5b15a89o.net/" target='_blank'><img src="images/jangmain.jpg" alt=""></a>
+              </div>
+              <span>장호원 타이어</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://hamongfood.co.kr/" target='_blank'><img src="images/hamongmain.jpg" alt=""></a>
+              </div>
+              <span>하몽 푸드</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://arcanewood.com/" target='_blank'><img src="images/arcanemain.jpg" alt=""></a>
+              </div>
+              <span>(주)아케인우드</span>
+            </div>
+              </div>
+          <div class="scroll-items scroll-items13">
+            <div class="scroll-item">
+              <div>
+                <a href="http://weldershomenursing.co.kr/" target='_blank'><img src="images/welmain.jpg" alt=""></a>
+              </div>
+              <span>웰더스</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://mpseoulcook.com/" target='_blank'><img src="images/mocmain.jpg" alt=""></a>
+              </div>
+              <span>목포 서울 요리 바리스타 학원</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://ynscommerce.com/" target='_blank'><img src="images/ysmain.jpg" alt=""></a>
+              </div>
+              <span>(주)와이엔에스커머스</span>
+            </div>
+              </div>
+          <div class="scroll-items scroll-items14">
+            <div class="scroll-item">
+              <div>
+                <a href="http://xn--bo1bq1j3bw4cs20cslb.com/" target='_blank'><img src="images/jmain.jpg" alt=""></a>
+              </div>
+              <span>전주 리모델링</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://xn--289ay13a6hi0hf.com/" target='_blank'><img src="images/dhmain.jpg" alt=""></a>
+              </div>
+              <span>(주)대호 조경 건설</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://xn--s80b51eu1pkveodv13d.kr/" target='_blank'><img src="images/nonmain.jpg" alt=""></a>
+              </div>
+              <span>논스탑 디자인</span>
+            </div>
+          </div>
+          <div class="scroll-items scroll-items15">
+            <div class="scroll-item">
+              <div>
+                <a href="https://flobe.kr/" target='_blank'><img src="images/lajinmain.jpg" alt=""></a>
+              </div>
+              <span>라진</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://maiamall.co.kr/" target='_blank'><img src="images/maiamain.png" alt=""></a>
+              </div>
+              <span>(주)그린에프엔비</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://qtlab.co.kr/" target='_blank'><img src="images/qtlmain.jpg" alt=""></a>
+              </div>
+              <span>(주)큐티엘</span>
+            </div>
+          </div>
+          <div class="scroll-items scroll-items16">
+            <div class="scroll-item">
+              <div>
+                <a href="https://sewonmtech.com/" target='_blank'><img src="images/sewonmain1.jpg" alt=""></a>
+              </div>
+              <span>세원엠테크</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://umsagency.kr/" target='_blank'><img src="images/umsmain1.jpg" alt=""></a>
+              </div>
+              <span>(주)UMS</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://bmseng1.cafe24.com/" target='_blank'><img src="images/bms.jpg" alt=""></a>
+              </div>
+              <span>BMS engineering</span>
+            </div>
+          </div>
+          <div class="scroll-items scroll-items16">
+            <div class="scroll-item">
+              <div>
+                <a href="https://www.decotrointl.co.kr/" target='_blank'><img src="images/decomain.jpg" alt=""></a>
+              </div>
+              <span>DECOTRO INDUSTRIES</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://dongnakwon.com/" target='_blank'><img src="images/dongrmain.jpg" alt=""></a>
+              </div>
+              <span>동락원</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://namkj7204.cafe24.com/" target='_blank'><img src="images/dobaemain.jpg" alt=""></a>
+              </div>
+              <span>도배하는집</span>
+            </div>
+          </div>
+          <div class="scroll-items scroll-items16">
+            <div class="scroll-item">
+              <div>
+                <a href="http://ahn6656.cafe24.com/" target='_blank'><img src="images/moamain.jpg" alt=""></a>
+              </div>
+              <span>모아환경</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://xn--sy2bt92bspe.kr/" target='_blank'><img src="images/hoonmain.jpg" alt=""></a>
+              </div>
+              <span>훈크린</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://xn--v69al6jrrifir.kr/" target='_blank'><img src="images/dndmain.jpg" alt=""></a>
+              </div>
+              <span>디앤디 산업·건설</span>
+            </div>
+          </div>
+          <div class="scroll-items scroll-items16">
+            <div class="scroll-item">
+              <div>
+                <a href="http://xn--o80br93at3imvg.com/" target='_blank'><img src="images/gimpomain.jpg" alt=""></a>
+              </div>
+              <span>김포앤강화캐노픽스</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://samsan76451.cafe24.com/" target='_blank'><img src="images/sammain.jpg" alt=""></a>
+              </div>
+              <span>삼산조경</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://kclxhtm.cafe24.com/" target='_blank'><img src="images/dnddmain.jpg" alt=""></a>
+              </div>
+              <span>(주)디앤드디</span>
+            </div>
+          </div>
+          <div class="scroll-items scroll-items16">
+            <div class="scroll-item">
+              <div>
+                <a href="https://dalzami.imweb.me/" target='_blank'><img src="images/dalzamimain.jpg" alt=""></a>
+              </div>
+              <span>달자미</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="https://www.gorillamaru.co.kr/" target='_blank'><img src="images/goliamain.jpg" alt=""></a>
+              </div>
+              <span>고릴라마루</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="http://uonetec.co.kr/" target='_blank'><img src="images/uwonmain.jpg" alt=""></a>
+              </div>
+              <span>(주)유원티이씨</span>
+            </div>
+          </div>
+          <div class="scroll-items scroll-items6">
+          <div class="scroll-item">
+            <div>
+              <a href="https://roamer.shop/" target='_blank'><img src="images/roamermain.jpg" alt=""></a>
+            </div>
+            <span>로멀</span>
+          </div>
+          <div class="scroll-item">
+            <div>
+              <a href="https://wordpress-788945-3067887.cloudwaysapps.com/" target='_blank'><img src="images/pentamain.jpg" alt=""></a>
+            </div>
+            <span>펜타클리프</span>
+          </div>
+          <div class="scroll-item scroll-item1">
+            <div>
+              <a href="https://wordpress-832681-2958309.cloudwaysapps.com/" target='_blank'><img src="images/paintmain.jpg" alt=""></a>
+            </div>
+            <span>한국미술진흥원</span>
+          </div>
+        </div>
+        <div class="scroll-items scroll-items6">
+          <div class="scroll-item">
+            <div>
+              <a href="https://wordpress-832681-3024645.cloudwaysapps.com/" target='_blank'><img src="images/ppmain.jpg" alt=""></a>
+            </div>
+              <span>스테이코지(엥겔베르그) - 환승연애2 촬영지</span>
+          </div>
+          <div class="scroll-item">
+            <div>
+              <a href="https://engelberg.kr/" target='_blank'><img src="images/engelmain.jpg" alt=""></a>
+            </div>
+            <span>엥겔베르그</span>
+          </div>
+        <div class="scroll-item">
+          <div>
+            <a href="https://wordpress-833912-2997334.cloudwaysapps.com/" target='_blank'><img src="images/balmain.jpg" alt=""></a>
+          </div>
+          <span>발해모빌</span>
+        </div>
+      </div>
+      <div class="scroll-items scroll-items2">
+      <div class="scroll-item">
+        <div>
+          <a href="https://goodlifedental-dasan.co.kr/" target='_blank'><img src="images/goolifemain2.jpg" alt=""></a>
+        </div>
+        <span>굿라이프치과</span>
+      </div>
+      </div>
+            
+            
+            
+        </div>
+      </section>
+    </div>
+  </div>
+  
+</body>
+</html>

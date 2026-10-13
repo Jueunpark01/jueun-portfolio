@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>HTML CSS JQuery</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
+   <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="js/script.js" defer></script> 
+  <!--ionicon-->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data.trim();
+          document.body.insertBefore(tempDiv.firstChild, document.body.firstChild);
+          addMenuToggleEvent();
+        })
+        .catch(error => console.error('Error loading header:', error));
+    });
+
+    function addMenuToggleEvent() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  menuToggle.addEventListener('click', function() {
+    menu.classList.toggle('open');
+  });
+
+  // Close menu when a menu item is clicked
+  menu.querySelectorAll('.menuitem').forEach(item => {
+    item.addEventListener('click', function() {
+      menu.classList.remove('open');
+    });
+  });
+}
+  </script>
+  <style>
+    .container {
+      display: contents;
+    }
+  </style>
+</head>
+<body>
+ 
+ 
+<div class="container">
+  <div class="header-inner" style="border-bottom: 0;">
+    <header></header>
+  </div>
+
+  <div class="inner">
+
+    <section class="pj_design_portfolio">
+      <div class="pj_design_inner">
+
+        <!-- UI/UX -->
+        <a href="gpt-project.html" class="pj_design_item">
+          <div class="pj_design_thumb">
+            <img src="img/gpt-mainimg1.png" alt="">
+            <span class="pj_design_category">UI/UX</span>
+
+            <div class="pj_design_overlay">
+              <h3>Chat GPT Design</h3>
+              <p>AI 서비스 UI/UX 디자인</p>
+            </div>
+          </div>
+
+          <div class="pj_design_info">
+            <h3>Chat GPT Design</h3>
+            <p>AI 서비스 UI/UX 디자인</p>
+          </div>
+        </a>
+
+        <!-- eDM -->
+        <a href="design_dg.html" class="pj_design_item">
+          <div class="pj_design_thumb">
+            <img src="img/img_design/edm01.png" alt="">
+            <span class="pj_design_category">eDM</span>
+
+            <div class="pj_design_overlay">
+              <h3>eDM Design</h3>
+              <p>마케팅 이메일 디자인</p>
+            </div>
+          </div>
+
+          <div class="pj_design_info">
+            <h3>eDM Design</h3>
+            <p>마케팅 이메일 디자인</p>
+          </div>
+        </a>
+        
+        <!-- Dashboard -->
+        <a href="#" class="pj_design_item">
+          <div class="pj_design_thumb">
+            <img src="img/bi-mainimg0.png" alt="">
+            <span class="pj_design_category">Dashboard</span>
+
+            <div class="pj_design_overlay">
+              <h3>Power BI Design</h3>
+              <p>데이터 시각화 UI 디자인</p>
+            </div>
+          </div>
+
+          <div class="pj_design_info">
+            <h3>Power BI Design</h3>
+            <p>데이터 시각화 UI 디자인</p>
+          </div>
+        </a>
+
+        <!-- Brochure -->
+        <a href="#" class="pj_design_item">
+          <div class="pj_design_thumb">
+            <img src="img/img_design/design_mockup01.jpg" alt="">
+            <span class="pj_design_category">Brochure</span>
+
+            <div class="pj_design_overlay">
+              <h3>Brochure Design</h3>
+              <p>브로슈어 및 인쇄물 디자인</p>
+            </div>
+          </div>
+
+          <div class="pj_design_info">
+            <h3>Brochure Design</h3>
+            <p>브로슈어 및 인쇄물 디자인</p>
+          </div>
+        </a>
+
+
+        <!-- Exhibition -->
+        <a href="#" class="pj_design_item">
+          <div class="pj_design_thumb">
+            <img src="img/img_design/x_banner01.jpg" alt="">
+            <span class="pj_design_category">Exhibition</span>
+
+            <div class="pj_design_overlay">
+              <h3>Exhibition Design</h3>
+              <p>백월 및 행사 공간 디자인</p>
+            </div>
+          </div>
+
+          <div class="pj_design_info">
+            <h3>Exhibition Design</h3>
+            <p>백월 및 행사 공간 디자인</p>
+          </div>
+        </a>
+
+        <!-- Goods -->
+        <!-- <a href="#" class="pj_design_item">
+          <div class="pj_design_thumb">
+            <img src="img/img_design/design_mockup04.jpg" alt="">
+            <span class="pj_design_category">Goods / POP</span>
+
+            <div class="pj_design_overlay">
+              <h3>Goods & POP</h3>
+              <p>굿즈 및 POP 디자인 작업</p>
+            </div>
+          </div>
+
+          <div class="pj_design_info">
+            <h3>Goods & POP</h3>
+            <p>굿즈 및 POP 디자인 작업</p>
+          </div>
+        </a> -->
+
+      </div>
+    </section>
+
+  </div>
+</div>
+
+  
+  
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>HTML CSS JQuery</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
+   <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script> 
+  <!--ionicon-->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data.trim();
+          document.body.insertBefore(tempDiv.firstChild, document.body.firstChild);
+          addMenuToggleEvent();
+        })
+        .catch(error => console.error('Error loading header:', error));
+    });
+
+    function addMenuToggleEvent() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  menuToggle.addEventListener('click', function() {
+    menu.classList.toggle('open');
+  });
+
+  // Close menu when a menu item is clicked
+  menu.querySelectorAll('.menuitem').forEach(item => {
+    item.addEventListener('click', function() {
+      menu.classList.remove('open');
+    });
+  });
+}
+  </script>
+  <style>
+    .container {
+      display: contents;
+    }
+    @media (max-width: 1024px) {
+
+}
+/*mobile*/
+@media only screen and (max-width: 768px) {
+
+}
+
+  </style>
+</head>
+<body>
+ 
+ <div class="container">
+    <div class="inner">
+      <header></header>
+      <section>
+        <div class="slide-nav">
+          <div class="webpage-back">
+            <!-- <a href="mobile-page-foodman.html">
+              <ion-icon name="arrow-back"></ion-icon>
+              <p> Mobile App</p>
+            </a> -->
+
+          </div>
+          <div class="webpage-current">
+            <a href="index.html">home</a>
+            <ion-icon name="arrow-dropright"></ion-icon>
+            <a href="">Chat GPT</a>
+            <ion-icon name="arrow-dropright"></ion-icon>
+            <a href="#none">Dongwon</a>
+            <h2>Dongwon Chat GPT</h2>
+          </div>
+          <div class="webpage-forward">
+            <!-- <a href="">
+              <p>Mobile App</p>
+              <ion-icon name="arrow-forward"></ion-icon>
+            </a> -->
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="my-slideshow uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: auto;autoplay: true;autoplay-interval: 3000;">
+          <!--autoplay: true;autoplay-interval: 3000-->
+          <ul class="uk-slideshow-items">
+            <img src="img/dongwon03-dark-v3-F.png" alt="">
+            <img src="img/dongwon03-dark-v3-b.png" alt="">
+            <img src="img/dongwon-v2-00.png" alt="">
+            <img src="img/dongwon-v2-01.png" alt="">
+            
+            <!--<li>
+              <a href="#none"></a>
+            </li>
+            <li>
+              <a href="#none"></a>
+            </li>
+            <li>
+              <a href="#none"></a>
+            </li>-->
+          </ul>
+
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+        </div>
+      </section>
+
+      <section class="project-explanation">
+        <article>
+          <div class="project-description">
+            <h4>'동원산업' Publishing</h4>
+            2023년 동원산업의 Chat GPT AOAI 1차 프로젝트에 디자인과 퍼블리싱 파트 담당자로 프로젝트를 수행하였습니다.<br>
+            2024년까지 2차와 고도화까지 디자인과 퍼블리싱을 담당하며, 프론트엔드 개발팀과 React를 사용하여 작업하였고,<br>
+            DATA group과 AI group이 함께 협업하여, 성공적인 프로젝트를 완성시켰으며, 추가적인 요청사항으로 현재 진행중입니다.<br>
+          </div>
+        </article>
+        <article>
+          <div class="project-details">
+            <ul>
+              <li><b>name</b> 동원산업</li>
+              <li><b>date</b> 2023 ~ 2024 </li>
+              <li><b>skills</b> DESIGN + HTML + CSS + JAVA SCRIPT</li>
+              <!-- <li><b>project URL</b>
+
+                <a class="details-btn uk-button uk-button-default" href="#modal-full" uk-toggle>CLICK !</a>
+
+                <div id="modal-full" class="uk-modal-full" uk-modal>
+                  <div class="my-modal uk-modal-dialog modal-sample">
+                    <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                      <iframe src="portfolio/mobile/samsung-gallexyS8/mobile-mockup-ui-design1/" frameborder="0"></iframe>
+                  </div>
+                </div>
+              </li> -->
+            </ul>
+          </div>
+        </article>
+      </section>
+    </div>
+  </div>
+  
+</body>
+</html>

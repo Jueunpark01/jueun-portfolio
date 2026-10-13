@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>web-page</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
+  <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
+  <!--style.css-->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script> 
+  <!--ionicon-->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data.trim();
+          document.body.insertBefore(tempDiv.firstChild, document.body.firstChild);
+          addMenuToggleEvent();
+        })
+        .catch(error => console.error('Error loading header:', error));
+    });
+
+  </script>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div class="inner">
+      <header></header>
+      <section>
+        <div class="slide-nav">
+          <div class="webpage-back">
+            <a href="webpage-inner-nikeoffical.html">
+              <ion-icon name="arrow-back"></ion-icon>
+              <p>Nike Offical Site + Product page</p>
+            </a>
+
+          </div>
+          <div class="webpage-current">
+            <a href="">home</a>
+            <ion-icon name="arrow-dropright"></ion-icon>
+            <a href="">web page</a>
+            <ion-icon name="arrow-dropright"></ion-icon>
+            <a href="#none">Nike Fiber Video + Product Web Page</a>
+            <h2>Nike Fiber Video + Product<br>Web Page</h2>
+          </div>
+          <div class="webpage-forward">
+            <a href="webpage-inner-bose.html">
+              <p>BOSE Randing Page</p>
+              <ion-icon name="arrow-forward"></ion-icon>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="my-slideshow uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: auto;autoplay: true;autoplay-interval: 3000;">
+          <!--autoplay: true;autoplay-interval: 3000-->
+          <ul class="uk-slideshow-items">
+            <img src="images/webpage-nikevideo1.jpg" alt="">
+            <img src="images/webpage-nikevideo2.jpg" alt="">
+            <img src="images/webpage-nikevideo3.jpg" alt="">
+            <img src="images/webpage-nikevideo4.jpg" alt="">
+            <!--<li>
+              <a href="#none"></a>
+            </li>
+            <li>
+              <a href="#none"></a>
+            </li>
+            <li>
+              <a href="#none"></a>
+            </li>-->
+          </ul>
+
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+        </div>
+      </section>
+
+      <section class="project-explanation">
+        <article>
+          <div class="project-description">
+            <h4>'Nike Fiber Video + Product Web Page'</h4>
+            하드코딩으로 비디오페이지와 상품페이지를 제작했습니다.<br>신발브랜드로 유명한 나이키는 나이키'Nike Fiber Video'를 첫 화면에 전체사이즈로 첨부를 시켜 반복되게 해놨습니다.<br> 프로덕트리뷰 버튼을 누르면 상품을 볼수있는 랜딩 페이지가 나오게끔 연결시켜놓았습니다.
+            <br><br>
+            <span>[ 기여도 100% ]</span>
+            
+            <br>
+          </div>
+        </article>
+        <article>
+          <div class="project-details">
+            <ul>
+              <li><b>name</b> Nike Fiber Video + Product Web Page</li>
+              <li><b>date</b> 2019 07 24</li>
+              <li><b>skills</b> DESIGN + BRAND + WEBSITE + HTML + CSS + jQuery</li>
+              <li><b>project URL</b>
+                
+                <a class="details-btn uk-button uk-button-default" href="#modal-full" uk-toggle>CLICK !</a>
+
+                <div id="modal-full" class="uk-modal-full" uk-modal>
+                    <div class="my-modal uk-modal-dialog modal-sample">
+                        <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                          <iframe src="portfolio/webpage/practical-webpage-nike/index.html" frameborder="0"></iframe>
+                    </div>
+                </div>
+                
+                <a class="btn-url-link" href="portfolio/webpage/practical-webpage-nike/index.html">[ http://www.nike.com ]</a>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </div>
+  </div>
+
+</body></html>

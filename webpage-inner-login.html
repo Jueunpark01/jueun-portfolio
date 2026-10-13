@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>web-page</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
+  <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
+  <!--style.css-->
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script> 
+  <!--ionicon-->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data.trim();
+          document.body.insertBefore(tempDiv.firstChild, document.body.firstChild);
+          addMenuToggleEvent();
+        })
+        .catch(error => console.error('Error loading header:', error));
+    });
+
+  </script>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div class="inner">
+      <header></header>
+      <section>
+        <div class="slide-nav">
+          <div class="webpage-back">
+            <a href="webpage-inner-apple.html">
+              <ion-icon name="arrow-back"></ion-icon>
+              <p>APPLE Randing Page</p>
+            </a>
+
+          </div>
+          <div class="webpage-current">
+            <a href="">home</a>
+            <ion-icon name="arrow-dropright"></ion-icon>
+            <a href="">web page</a>
+            <ion-icon name="arrow-dropright"></ion-icon>
+            <a href="#none">Study.com - Login Page</a>
+            <h2>Study.com - Login Page<br>WEB PAGE</h2>
+          </div>
+          <div class="webpage-forward">
+            <a href="webpage-inner-nikeoffical.html">
+              <p>NIKE OFFICAL + PRODUCT Randing Page</p>
+              <ion-icon name="arrow-forward"></ion-icon>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="my-slideshow uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: auto;autoplay: true;autoplay-interval: 3000;">
+          <!--autoplay: true;autoplay-interval: 3000-->
+          <ul class="uk-slideshow-items">
+            <img src="images/webpage-login3.png" alt="">
+            <img src="images/webpage-login4.png" alt="">
+            <!--<li>
+              <a href="#none"></a>
+            </li>
+            <li>
+              <a href="#none"></a>
+            </li>
+            <li>
+              <a href="#none"></a>
+            </li>-->
+          </ul>
+
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+        </div>
+      </section>
+
+      <section class="project-explanation">
+        <article>
+          <div class="project-description">
+            <h4>'Study.com - Login Page'</h4>
+            'Study.com'사이트의 로그인 페이지를 하드코딩했습니다.<br>공부사이트기 때문에 화려하게 꾸미지 않고 로그인페이지에 필요한 부분들로 채워 제작했습니다.<br>
+            전부 하드코딩으로 제작했고, a태그가 아닌 버튼태그를 사용했습니다.
+            <br><br>
+            <span>[ 기여도 95% ]</span>
+          </div>
+        </article>
+        <article>
+          <div class="project-details">
+            <ul>
+              <li><b>name</b> Login Page</li>
+              <li><b>date</b> 2019 07 26</li>
+              <li><b>skills</b> BRAND + WEBSITE + HTML + CSS + jQuery + Script</li>
+              <li><b>project URL</b>
+                
+                <a class="details-btn uk-button uk-button-default" href="#modal-full" uk-toggle>CLICK !</a>
+
+                <div id="modal-full" class="uk-modal-full" uk-modal>
+                    <div class="my-modal uk-modal-dialog modal-sample">
+                        <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                          <iframe src="portfolio/webpage/login-form/index.html" frameborder="0"></iframe>
+                    </div>
+                </div>
+                
+                <a class="btn-url-link" href="portfolio/webpage/login-form/index.html">[ http://www.Login Page.com ]</a>
+              </li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </div>
+  </div>
+
+</body></html>

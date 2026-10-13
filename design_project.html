@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>HTML CSS JQuery</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
+   <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script> 
+  <!--ionicon-->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data.trim();
+          document.body.insertBefore(tempDiv.firstChild, document.body.firstChild);
+          addMenuToggleEvent();
+        })
+        .catch(error => console.error('Error loading header:', error));
+    });
+
+    function addMenuToggleEvent() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  menuToggle.addEventListener('click', function() {
+    menu.classList.toggle('open');
+  });
+
+  // Close menu when a menu item is clicked
+  menu.querySelectorAll('.menuitem').forEach(item => {
+    item.addEventListener('click', function() {
+      menu.classList.remove('open');
+    });
+  });
+}
+  </script>
+  <style>
+    .container {
+      display: contents;
+      
+  height: 100vh;
+    }
+/* 태블릿 및 모바일 Media Queries */
+@media (max-width: 1024px) {
+
+}
+/*mobile*/
+@media only screen and (max-width: 768px) {
+  .scroll-item {
+    display: block;
+    margin: 20px;
+}
+}
+  </style>
+</head>
+<body>
+ 
+ 
+  <div class="container"> 
+    
+   <div class="header-inner">
+    <header></header>
+      </div>
+      
+    <div class="inner">
+      <section class="website">
+          <div class="scroll-items">
+            <div class="scroll-item">
+              <div>
+                <a href="webpage-inner-bose.html"><img src="images/website1.jpg" alt=""></a>
+              </div>
+              <span>BOSE</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="webpage-inner-odense.html"><img src="images/website5.jpg" alt=""></a>
+              </div>
+              <span>ODENSE</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="webpage-inner-neiborhood.html"><img src="images/website3.jpg" alt=""></a>
+              </div>
+              <span>NEIGHBORHOOD</span>
+            </div>
+          </div>
+          <div class="scroll-items">
+            <div class="scroll-item">
+              <div>
+                <a href="webpage-inner-nh.html"><img src="images/website4.jpg" alt=""></a>
+              </div>
+              <span>NH 농협은행</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="webpage-inner-google.html"><img src="images/website2.jpg" alt=""></a>
+              </div>
+              <span>GOOGLE</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="webpage-inner-apple.html"><img src="images/website6.jpg" alt=""></a>
+              </div>
+              <span>APPLE</span>
+            </div>
+          </div>
+          <div class="scroll-items">
+            <div class="scroll-item">
+              <div>
+                <a href="webpage-inner-login.html"><img src="images/loginform-photo.png" alt=""></a>
+              </div>
+              <span>LOGIN PAGE</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="webpage-inner-nikeoffical.html"><img src="images/nike-product.png" alt=""></a>
+              </div>
+              <span>NIKE OFFICAL + PRODUCT</span>
+            </div>
+            <div class="scroll-item">
+              <div>
+                <a href="webpage-inner-nikevideo.html"><img src="images/nike-videoproduct.png" alt=""></a>
+              </div>
+              <span>NIKE VIDEO + PRODUCT</span>
+            </div>
+          </div>
+
+      </section>
+    </div>
+  </div>
+  
+  
+</body>
+</html>

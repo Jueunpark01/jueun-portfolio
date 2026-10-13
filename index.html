@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<title>Park JuEun Portfolio Site</title>
+<link rel="icon" type="image/png" href="/img/favicon/jueunfavicon.png">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/script.js" defer></script> 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data.trim();
+          document.body.insertBefore(tempDiv.firstChild, document.body.firstChild);
+          addMenuToggleEvent();
+        })
+        .catch(error => console.error('Error loading header:', error));
+    });
+
+    function addMenuToggleEvent() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  menuToggle.addEventListener('click', function() {
+    menu.classList.toggle('open');
+  });
+
+  // Close menu when a menu item is clicked
+  menu.querySelectorAll('.menuitem').forEach(item => {
+    item.addEventListener('click', function() {
+      menu.classList.remove('open');
+    });
+  });
+}
+
+  </script>
+  <style>
+@media (min-width: 768px) {
+  .container{
+    overflow: hidden;
+    height: 100vh;
+  }
+  /* .section.intro {
+  height: 74vh !important;  
+  } */
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="scroll">
+      <header></header>
+      <div class="inner-container">
+        <div class="introsection">
+          <div class="intromain">
+            <!--intro-->
+            <section id="intro" class="section intro page1 feature1">
+              <div id="introbg" class="introbg">
+                <div class="title-content intro-left-content">
+                  <div class="txtBox txtBox1">
+                    <p style="margin:0; padding: 0px 8px 0px 39px; text-align: left; font-size: 1.4em;">HTML +
+                      HTML5 + CSS + CSS3</p>
+                    <p style="margin:0; padding: 0px 18px 0px 3px; text-align: left; font-size: 1.6em;">
+                      JavaScript + j-Query</p>
+                    <p style="margin:0; padding: 0px 3px 0px 5px; text-align: center; font-size: 1.6em;">Adobe
+                      XD | Figma</p>
+                    <p style="margin:0; padding: 0px 3px 0px 0px; text-align: center; font-size: 1.2em;">UI UX
+                      Design</p>
+                    <p style="margin:0; padding: 0px 8px 0px 20px; text-align: left; font-size: 1.9em;">
+                      Phothshop + ILLustrator</p>
+                    <p style="margin:0; padding: 0px 13px 0px 8px; text-align: center; font-size: 1.3em;">CMS;
+                      Wordpress + imweb + cafe24</p>
+                    <p style="margin:0; padding: 0px 49px 0px 2px; text-align: right; font-size: 1.6em;">PowerBI
+                      Design + Chat GPT Design</p>
+                    <p style="margin:0; padding: 0px 0px 0px 1px; text-align: right; font-size: 1.3em;">PPT
+                      Design</p>
+                  </div>
+                  <div class="txtBox txtBox2">
+                    <div>
+                      <!-- <p>2019 - 2024</p> -->
+                      <h1 class="introName">Park JuEun</h1>
+                    </div>
+                    <!-- <div class="txtBox txtBox2-2">
+                      <h1 class="introSkill introSkill-1">Publisher</h1>
+                      <h1 class="introSkill introSkill-2">UI <i class="fa-solid fa-xmark"></i> UX Designer
+                      </h1>
+                      <h1 class="introSkill introSkill-3">Web planner</h1>
+                      <h1 class="introSkill introSkill-4">Brand Designer</h1>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="title-content intro-right-content">
+                  <div class="txtBox txtBox3">
+                    <img src="/img/titile-menu01.png" alt="Web publishing">
+                    <i class="fa-solid fa-plus"></i>
+                    <p><a href="webpage.html" target='_blank' class="manifesto-link manifesto-link1">Read the Web →</a></p>
+                  </div>
+                  <div class="txtBox txtBox7">
+                    <img src="/img/titile-menu02.png" alt="Mobile app">
+                    <p><a href="mobile.html" target='_blank' class="manifesto-link manifesto-link1">Read the Mobile App →</a></p>
+                  </div>
+                  <div class="txtBox txtBox4">
+                    <img src="/img/titile-menu04.png" alt="Chat GPT">
+                    <p><a href="gpt-project.html" target='_blank' class="manifesto-link manifesto-link1">Read the Project →</a></p>
+                  </div>
+                  <div class="txtBox txtBox4">
+                    <img src="/img/titile-menu05.png" alt="Design">
+                    <p><a href="design.html" target='_blank' class="manifesto-link manifesto-link1">Read the Design →</a></p>
+                  </div>
+                
+                  <div class="txtBox txtBox6">
+                    <img src="/img/titile-menu06.png" alt="SKILL">
+                    <p><a href="practical.html" target='_blank' class="manifesto-link manifesto-link3">Read the Skill →</a></p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!--intro end-->
+
+            <!--about-->
+            <section id="about" class="section about page2 feature2">
+              <div class="aboutbg">
+                <div class="title-content about-left-content">
+                  <div class="txtBox txtBox2-1">
+                    <img src="img/jueun02.jpg" alt="jueunphoto" class="webphoto">
+                    <h2>PARK JUEUN</h2>
+                  </div>
+                </div>
+                <div class="title-content about-right-content">
+                  <div class="txtBox txtBox2-2">
+                    <div class="slide fp-slide fp-table active">
+                      <div class="fp-tableCell">
+                        <div class="center-inner">
+                          <!-- <h1>My skill part</h1> -->
+                          <div class="program-items">
+                            <div class="category">
+                              <span>HTML5</span>
+                            </div>
+                            <div class="progress">
+                              <span style="width:90%"></span>
+                            </div>
+                            <!-- <span>90%</span> -->
+                          </div>
+                          <div class="program-items">
+                            <div class="category">
+                              <span>css</span>
+                            </div>
+                            <div class="progress">
+                              <span style="width:95%"></span>
+                            </div>
+                            <!-- <span>95%</span> -->
+                          </div>
+                          <div class="program-items">
+                            <div class="category">
+                              <span>jQuery</span>
+                            </div>
+                            <div class="progress">
+                              <span style="width:80%"></span>
+                            </div>
+                            <!-- <span>80%</span> -->
+                          </div>
+                          <div class="program-items">
+                            <div class="category">
+                              <span>JAVA Script</span>
+                            </div>
+                            <div class="progress">
+                              <span style="width:90%"></span>
+                            </div>
+                            <!-- <span>90%</span> -->
+                          </div>
+                          <div class="program-items">
+                            <div class="category">
+                              <span>Web design &amp; design</span>
+                            </div>
+                            <div class="progress">
+                              <span style="width:90%"></span>
+                            </div>
+                            <!-- <span>70%</span> -->
+                          </div>
+                          <div class="program-items">
+                            <div class="category">
+                              <span>Photoshop &amp; Illustrator</span>
+                            </div>
+                            <div class="progress">
+                              <span style="width:90%"></span>
+                            </div>
+                            <!-- <span>90%</span> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="txtBox txtBox2-3">
+                    <h1>Web publishing</h1>
+                    <p><a href="index.html#publishing" class="manifesto-link manifesto-link6">Go to the next page →</a></p>
+                  </div>
+                </div>
+              </div>
+
+            </section>
+          </div>
+          <div class="bottomTxt">
+            <div class="title-content about-bottom-content">
+              <div class="txtBox txtBox2-4">
+                <h1 class="aboutBottomTxt1">Try your best rather than be the best.</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--about end-->
+        <!--publishing-->
+        <div id="publishing" class="section publishing page3 feature3">
+          <section class="publishingbg">
+            <div class="title-content title-content6-1">
+              <h2>Publishing</h2>
+            </div>
+            <div id="publishinggoto" class="publishinggoto">
+          <div class="title-content title-content3">
+            <h2>About us</h2>
+            <p><a href="index.html#about" data-menuanchor="feature1" class="manifesto-link manifesto-link6">← Go to the previous page</a></p>
+          </div>
+          <div class="title-content title-content4">
+            <h2>Mobile App</h2>
+            <p><a href="index.html#mobileapp" class="manifesto-link manifesto-link6">Go to the next page →</a></p>
+          </div>
+        </div>
+        </section>
+        </div>
+
+
+        <!--projects-->
+        <!-- <div id="projects" class="section projects page5 feature4">
+          <section class="projectbg">
+              <div class="title-content title-content6-1">
+                <h2>Projects</h2>
+              </div>
+              <div id="projectsgoto" class="projectsgoto">
+                <div class="title-content title-content5">
+                  <h2>publishing</h2>
+                  <p><a href="index.html#publishing" class="manifesto-link manifesto-link6">← Go to the previous page</a></p>
+                </div>
+                <div class="title-content title-content10">
+                  <h2>Mobile App</h2>
+                  <p><a href="index.html#mobileapp" class="manifesto-link manifesto-link11">Go to the next page →</a></p>
+                </div>
+              </div>
+          </section>
+        </div> -->
+        <!--projects end-->
+
+        
+
+
+        <div id="mobileapp" class="section mobileapp page7 feature6">
+          <section class="mobileappbg">
+            <div class="title-content title-content7">
+              <h2>Mobile App</h2>
+              <p></p>
+            </div>
+            <div id="mobilegoto" class="mobilegoto">
+              <div class="title-content title-content6">
+                <h2>Publishing</h2>
+                <p><a href="index.html#projects2" class="manifesto-link manifesto-link10">← Go to the previous page</a></p>
+                <article><div class="practical"><a href="design.html"></a></div></article>
+              </div>
+              <div class="title-content title-content11-1">
+                <h2>projects</h2>
+                <p><a href="index.html#projects2" class="manifesto-link manifesto-link11">Go to the next page →</a></p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div id="projects2" class="section projects2 page8 feature7">
+          <section class="projects2bg">
+            <div class="title-content title-content8">
+              <h2>Projects</h2>
+              <p></p>
+            </div>
+            <div id="projects2goto" class="projects2goto">
+              <div class="title-content title-content12">
+                <h2>Mobile App</h2>
+                <p><a href="index.html#mobileapp" class="manifesto-link manifesto-link12">← Go to the previous page</a></p>
+              </div>
+              <div class="title-content title-content12-1">
+                <h2>Design</h2>
+                <p><a href="index.html#design" class="manifesto-link manifesto-link12">Go to the next page →</a></p>
+              </div>
+            </div>
+          </section>
+        </div>
+        
+        
+        <div id="design" class="section design page9 feature8">
+          <section class="designbg">
+            <div class="title-content title-content8">
+              <h2>Design</h2>
+              <p></p>
+            </div>
+            <div id="projects2goto" class="projects2goto">
+              <div class="title-content title-content12">
+                <h2>Projects</h2>
+                <p><a href="index.html#projects2" class="manifesto-link manifesto-link12">← Go to the previous page</a></p>
+              </div>
+              <div class="title-content title-content12-1">
+                <h2>skill</h2>
+                <p><a href="index.html#skill" class="manifesto-link manifesto-link12">Go to the next page →</a></p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+
+        <div id="skill" class="section skill page10 feature9">
+          <section class="skillbg">
+            <div class="title-content title-content9">
+              <h2>skill</h2>
+              <p></p>
+            </div>
+            <div id="skllgoto" class="skllgoto">
+              <div class="title-content title-content13">
+                <h2>Design</h2>
+                <p><a href="index.html#design" class="manifesto-link manifesto-link13">← Go to the previous page</a></p>
+              </div>
+              <!-- <div class="title-content title-content13-1">
+                <h2>intro</h2>
+                <p><a href="index.html#intro" class="manifesto-link manifesto-link13">Go to the intro page →</a></p>
+              </div> -->
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+  </script>
+  
+</body>
+
+</html>

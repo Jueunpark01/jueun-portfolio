@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>HTML CSS JQuery</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
+   <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script> 
+  <!--ionicon-->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data.trim();
+          document.body.insertBefore(tempDiv.firstChild, document.body.firstChild);
+          addMenuToggleEvent();
+        })
+        .catch(error => console.error('Error loading header:', error));
+    });
+
+    function addMenuToggleEvent() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  menuToggle.addEventListener('click', function() {
+    menu.classList.toggle('open');
+  });
+
+  // Close menu when a menu item is clicked
+  menu.querySelectorAll('.menuitem').forEach(item => {
+    item.addEventListener('click', function() {
+      menu.classList.remove('open');
+    });
+  });
+}
+  </script>
+  <style>
+    .container {
+      display: contents;
+    }
+  </style>
+</head>
+<body>
+ 
+ 
+  <div class="container">
+    <div class="header-inner">
+     <header></header>
+       </div>
+    <div class="inner">
+      
+      <div class="mobile-wrapper">
+        <div class="my-lightbox uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true">
+        <ul class="slide-mobile uk-slider-items uk-grid">
+          <li class="uk-width-3-4">
+            <div class="slide-mobile-inner uk-panel">
+              <a href="mobile-page-bluebottle.html"><img src="images/mobile-bluebottle-main.png" alt=""></a>
+              <div class="mobile-overlay uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                <h3 class="uk-margin-remove">BLUE-BOTTLE Mobile App</h3>
+                <p class="uk-margin-remove">'Blue Bottle' 이라는 카페브랜드를 모바일 버전으로 리디자인</p>
+              </div>
+            </div>
+          </li>
+          <li class="uk-width-3-4">
+            <div class="uk-panel">
+              <a href="mobile-page-hermes.html">
+                <img src="images/mobile-hermes-main.png" alt=""></a>
+              <div class="mobile-overlay uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                <h3 class="uk-margin-remove">HERMES</h3>
+                <p class="uk-margin-remove">'HERMES' 이라는 패션 브랜드를 모바일 버전으로 리디자인</p>
+              </div>
+            </div>
+          </li>
+          <li class="uk-width-3-4">
+            <div class="uk-panel">
+              <a href="mobile-page-foodman.html">
+              <img src="images/mobile-food-main.png" alt="">
+              </a>
+              <div class="mobile-overlay uk-overlay uk-overlay-primary uk-position-bottom uk-text-center uk-transition-slide-bottom">
+                <h3 class="uk-margin-remove">배달의 민족</h3>
+                <p class="uk-margin-remove">'배달의 민족' 이라는 모바일 배달 어플 반응형으로 제작</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <!--<a class="mobile-left uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+        <a class="mobile-right uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>-->
+
+      </div>
+      </div>
+
+
+    </div>
+  </div>
+  
+  
+</body>
+</html>

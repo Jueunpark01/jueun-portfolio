@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>HTML CSS JQuery</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
+   <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style_design.css">
+  <script src="js/script.js" defer></script> 
+  <!--ionicon-->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data.trim();
+          document.body.insertBefore(tempDiv.firstChild, document.body.firstChild);
+          addMenuToggleEvent();
+        })
+        .catch(error => console.error('Error loading header:', error));
+    });
+
+    function addMenuToggleEvent() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('menu');
+  menuToggle.addEventListener('click', function() {
+    menu.classList.toggle('open');
+  });
+
+  // Close menu when a menu item is clicked
+  menu.querySelectorAll('.menuitem').forEach(item => {
+    item.addEventListener('click', function() {
+      menu.classList.remove('open');
+    });
+  });
+}
+  </script>
+  <style>
+    .container {
+      display: contents;
+    }
+  </style>
+</head>
+<body>
+ 
+ 
+<div class="container">
+  <div class="header-inner" style="border-bottom: 0;">
+    <header></header>
+  </div>
+
+  <div class="inner">
+
+    <section class="dg_design_wrap">
+
+      <!-- 타이틀 -->
+      <div class="dg_design_header">
+        <h1>Digital Marketing Design</h1>
+        <p>eDM 디지털 프로모션 디자인 작업 모음</p>
+      </div>
+
+      <!-- 카드 리스트 -->
+      <div class="dg_design_grid">
+
+        <!-- 카드 1 -->
+        <a href="#modal1" class="dg_design_card">
+          <div class="dg_design_thumb">
+            <img src="img/img_design/GWS-Sales-Play.jpg">
+          </div>
+          <div class="dg_design_info">
+            <h3>Google Workspace 프로모션 eDM</h3>
+            <p>프로모션 캠페인 디자인</p>
+          </div>
+        </a>
+
+        <!-- 카드 2 -->
+        <a href="#modal2" class="dg_design_card">
+          <div class="dg_design_thumb">
+            <img src="img/img_design/microsoft-Partner-of-the-Year.png">
+          </div>
+          <div class="dg_design_info">
+            <h3>수상 기념 이벤트 eDM</h3>
+            <p>프로모션 이벤트 캠페인 디자인</p>
+          </div>
+        </a>
+
+        <!-- 카드 3 -->
+        <a href="#modal3" class="dg_design_card">
+          <div class="dg_design_thumb">
+            <img src="img/img_design/GCP_GWS-Digital-Campaign-Promotion.jpg">
+          </div>
+          <div class="dg_design_info">
+            <h3>단독 프로모션 eDM</h3>
+            <p>프로모션 디자인</p>
+          </div>
+        </a>
+
+        <!-- 카드 4 -->
+        <a href="#modal4" class="dg_design_card">
+          <div class="dg_design_thumb">
+            <img src="img/img_design/m365-copilot_promotion.png">
+          </div>
+          <div class="dg_design_info">
+            <h3>Copilot 프로모션 eDM</h3>
+            <p>프로모션 캠페인 디자인</p>
+          </div>
+        </a>
+
+        <!-- 카드 5 -->
+        <a href="#modal5" class="dg_design_card">
+          <div class="dg_design_thumb">
+            <img src="img/img_design/microsoft-365-copilot_01_01.png">
+          </div>
+          <div class="dg_design_info">
+            <h3>Copilot 패키지 프로모션 eDM</h3>
+            <p>할인 프로모션 디자인</p>
+          </div>
+        </a>
+
+        <!-- 카드 6 -->
+        <a href="#modal6" class="dg_design_card">
+          <div class="dg_design_thumb">
+            <img src="img/img_design/K-ICT-WEEK-In-Busan_eDM_240830.jpg">
+          </div>
+          <div class="dg_design_info">
+            <h3>K-ICT 행사 안내 eDM</h3>
+            <p>행사 초청 메일 디자인</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ===================== -->
+<!-- 모달 영역 -->
+<!-- ===================== -->
+
+<div id="modal1" class="dg_modal">
+  <a href="#" class="dg_modal_bg"></a>
+  <div class="dg_modal_content">
+    <a href="#" class="dg_modal_close">×</a>
+    <img src="img/img_design/GWS-Sales-Play.jpg">
+  </div>
+</div>
+
+<div id="modal2" class="dg_modal">
+  <a href="#" class="dg_modal_bg"></a>
+  <div class="dg_modal_content">
+    <a href="#" class="dg_modal_close">×</a>
+    <img src="img/img_design/microsoft-Partner-of-the-Year.png">
+  </div>
+</div>
+
+<div id="modal3" class="dg_modal">
+  <a href="#" class="dg_modal_bg"></a>
+  <div class="dg_modal_content">
+    <a href="#" class="dg_modal_close">×</a>
+    <img src="img/img_design/GCP_GWS-Digital-Campaign-Promotion.jpg">
+  </div>
+</div>
+
+<div id="modal4" class="dg_modal">
+  <a href="#" class="dg_modal_bg"></a>
+  <div class="dg_modal_content">
+    <a href="#" class="dg_modal_close">×</a>
+    <img src="img/img_design/m365-copilot_promotion.png">
+  </div>
+</div>
+
+<div id="modal5" class="dg_modal">
+  <a href="#" class="dg_modal_bg"></a>
+  <div class="dg_modal_content">
+    <a href="#" class="dg_modal_close">×</a>
+    <img src="img/img_design/microsoft-365-copilot_01_01.png">
+  </div>
+</div>
+
+<div id="modal6" class="dg_modal">
+  <a href="#" class="dg_modal_bg"></a>
+  <div class="dg_modal_content">
+    <a href="#" class="dg_modal_close">×</a>
+    <img src="img/img_design/K-ICT-WEEK-In-Busan_eDM_240830.jpg">
+  </div>
+</div>
+
+
+  
+  
+</body>
+</html>

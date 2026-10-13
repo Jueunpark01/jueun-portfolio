@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>HTML CSS JQuery</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
+   <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script> 
+  <!--ionicon-->
+  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = data.trim();
+          document.body.insertBefore(tempDiv.firstChild, document.body.firstChild);
+          addMenuToggleEvent();
+        })
+        .catch(error => console.error('Error loading header:', error));
+    });
+
+  </script>
+  <style>
+    .container {
+      display: contents;
+    }
+  </style>
+</head>
+<body>
+ 
+ 
+  <div class="container">
+   <div class="header-inner">
+    <header></header>
+      </div>
+    
+    <div class="item-lightbox" uk-lightbox>
+      <div class="item-group">
+    <div class="item">
+      <h3>01.</h3>
+      <div class="item-hover">
+        <span></span>
+        <span></span>
+        <a href=""><img src=""></a>
+      </div>
+      <h4>calculator</h4>
+    </div>
+    <div class="item">
+      <h3>02.</h3>
+      <div class="item-hover">
+        <span></span>
+        <span></span>
+        <a href=""><img src=""></a>
+      </div>
+      <h4>3D App UI</h4>
+    </div>
+    <div class="item">
+      <h3>03.</h3>
+      <div class="item-hover">
+        <span></span>
+        <span></span>
+        <a href=""><img src=""></a>
+      </div>
+      <h4>animated-login-form</h4>
+    </div>
+    <div class="item">
+      <h3>04.</h3>
+      <div class="item-hover">
+        <span></span>
+        <span></span>
+        <a href=""><img src=""></a>
+      </div>
+      <h4>card-hover-effect</h4>
+    </div>
+  </div>
+      <div class="item-group">
+        <div class="item">
+          <h3>05.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href=""><img src=""></a>
+          </div>
+          <h4>card-hover-effect</h4>
+        </div>
+        <div class="item">
+          <h3>06.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href=""><img src=""></a>
+          </div>
+          <h4>inspiration</h4>
+        </div>
+        <div class="item">
+          <h3>07.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href=""><img src=""></a>
+          </div>
+          <h4>photo gallery</h4>
+        </div>
+        <div class="item">
+          <h3>08.</h3>
+          <div class="item-hover">
+            <span></span>
+            <span></span>
+            <a href=""><img src=""></a>
+          </div>
+          <h4>approach</h4>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+  
+  
+</body>
+</html>
