@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Lexend:wght@400;500;600&display=swap");
 
 @font-face { font-family: "Les Flos Chaos"; src: url("../font/Les%20Flos%20Chaos.otf") format("opentype"); font-display: swap; }
 
@@ -21,7 +21,11 @@ h1, h2, h3, p, figure { margin: 0; }
 .site-header { position: fixed; z-index: 50; inset: 0 0 auto; height: var(--header-h); padding: 0 var(--page-x); display: flex; align-items: center; justify-content: space-between; color: var(--ink); background: rgb(242 242 238 / 86%); backdrop-filter: blur(14px); transition: color .3s, background .3s, transform .35s; }
 .site-header.on-intro { transform: translateY(-100%); }
 .site-header.is-dark { color: var(--white); background: rgb(6 6 6 / 84%); }
-.site-logo { font-size: 17px; font-weight: 600; letter-spacing: -.03em; }
+.site-logo { display: block; width: clamp(92px, 7.4vw, 118px); }
+.site-logo img { width: 100%; height: auto; }
+.site-logo .logo-light { display: none; }
+.site-header.is-dark .site-logo .logo-dark { display: none; }
+.site-header.is-dark .site-logo .logo-light { display: block; }
 .site-nav { display: flex; gap: clamp(16px, 2.2vw, 42px); align-items: center; }
 .site-nav a { position: relative; font-size: 11px; font-weight: 500; letter-spacing: .09em; }
 .site-nav a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -7px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform .3s var(--ease); }
@@ -31,10 +35,15 @@ h1, h2, h3, p, figure { margin: 0; }
 
 .eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
 .section { position: relative; padding: clamp(120px, 12vw, 230px) var(--page-x); scroll-margin-top: var(--header-h); }
-.section-head { display: grid; gap: 42px; margin-bottom: clamp(80px, 11vw, 200px); }
+.section-head { display: grid; gap: 42px; margin-bottom: clamp(80px, 6vw, 200px); }
 .section-head--row { grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr); align-items: end; gap: 8vw; }
-.section-head h2 { margin-top: 34px; font-size: clamp(64px, 10vw, 188px); font-weight: 500; line-height: .78; letter-spacing: -.075em; }
+.section-head h2, .display-title, .contact h2, .about-info h2 { font-family: "Les Flos Chaos", serif; font-weight: 400; }
+.section-head h2 { margin-top: 34px; font-size: clamp(54px, 6vw, 152px); line-height: .82; letter-spacing: -.04em; }
 .section-intro { max-width: 580px; font-size: clamp(18px, 1.6vw, 30px); line-height: 1.45; letter-spacing: -.035em; }
+
+.project-thumb { position: relative; overflow: hidden; padding: clamp(8px, 1.1vw, 18px); border-radius: 10px; background: #fff; }
+.project-thumb img { width: 100%; height: 100%; object-fit: contain; transition: transform .65s var(--ease); }
+a:hover .project-thumb img, .project-thumb:hover img { transform: scale(1.02); }
 
 /* Figma cover: 1920 × 1024 composition. */
 .intro { position: relative; height: 100vh; height: 100dvh; min-height: 600px; overflow: hidden; background: #fff; color: #000; }
@@ -48,20 +57,24 @@ h1, h2, h3, p, figure { margin: 0; }
 .about { position: relative; min-height: 100vh; min-height: 100dvh; padding: clamp(130px, 17vh, 210px) var(--page-x) clamp(80px, 10vh, 130px); display: grid; grid-template-columns: minmax(280px, .72fr) minmax(520px, 1.28fr); align-items: center; gap: clamp(70px, 12vw, 230px); background: #050505; color: #fff; scroll-margin-top: var(--header-h); }
 .about-logo { position: absolute; top: 26px; left: 50%; transform: translateX(-50%); color: #252525; font-size: 24px; letter-spacing: .04em; }
 .about-profile { align-self: center; max-width: 360px; }
-.about-profile img { width: min(100%, 279px); margin: clamp(42px, 6vh, 76px) 0 28px; border-radius: 40px; aspect-ratio: 279/371; object-fit: cover; }
+.about-profile img { width: min(100%, 230px); margin: clamp(42px, 6vh, 76px) 0 28px; border-radius: 40px; aspect-ratio: 279/371; object-fit: cover; }
 .about-name { display: flex; justify-content: space-between; gap: 24px; width: min(100%, 279px); font-size: 18px; }
 .about-name strong { font-weight: 500; }
 .about-name span { color: #aaa; }
-.about-info h2 { font-size: clamp(72px, 9vw, 170px); font-weight: 450; line-height: .8; letter-spacing: -.075em; }
+.about-info h2 { font-size: clamp(38px, 7vw, 170px); line-height: .8; letter-spacing: -.055em; }
 .about-contact { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: clamp(55px, 8vh, 100px) 0; padding-top: 20px; border-top: 1px solid #333; }
 .about-contact p { display: grid; gap: 16px; font-size: clamp(16px, 1.4vw, 26px); }
-.about-contact span { color: #777; font-size: 11px; letter-spacing: .12em; }
+.about-contact span { color: #777; font-family: "Lexend", sans-serif; font-size: 11px; font-weight: 500; letter-spacing: .1em; }
 .about-facts { border-top: 1px solid #333; }
 .about-facts article { display: grid; grid-template-columns: 150px 1fr; gap: 30px; padding: 24px 0; border-bottom: 1px solid #333; }
-.about-facts h3 { font-size: 12px; letter-spacing: .1em; }
+.about-facts h3 { font-family: "Lexend", sans-serif; font-size: clamp(16px, 1.15vw, 20px); font-weight: 500; letter-spacing: .03em; }
 .about-facts p { color: #bbb; line-height: 1.5; }
 
 .works { background: var(--paper); }
+.works-intro { min-height: 90vh; display: grid; align-content: center; grid-template-columns: 1fr auto; gap: 60px; }
+.works-intro .eyebrow { grid-column: 1 / -1; }
+.display-title { font-size: clamp(54px, 6.2vw, 152px); line-height: .82; letter-spacing: -.04em; }
+.works-manifest { align-self: end; display: grid; gap: 10px; min-width: 190px; padding-top: 18px; border-top: 1px solid; font-size: 11px; letter-spacing: .11em; }
 .featured-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(70px, 10vw, 180px) 24px; }
 .featured { display: grid; gap: 22px; }
 .featured--dongwon { grid-column: 1 / 9; }
@@ -75,69 +88,152 @@ h1, h2, h3, p, figure { margin: 0; }
 .featured:hover img { transform: scale(1.025); }
 .project-caption { display: grid; grid-template-columns: 90px 1fr; gap: 20px; padding-top: 18px; border-top: 1px solid var(--ink); }
 .project-caption span { font-size: 10px; letter-spacing: .1em; }
-.project-caption h3 { font-size: clamp(36px, 5vw, 90px); font-weight: 500; line-height: .84; letter-spacing: -.065em; }
+.project-caption h3 { font-family: "Lexend", sans-serif; font-size: clamp(20px, 2vw, 30px); font-weight: 600; line-height: 1.05; letter-spacing: -.035em; }
 .project-caption p { grid-column: 2; color: var(--muted); }
 
 .web { background: #fff; }
 .web-editorial { display: grid; grid-template-columns: 1.25fr .75fr; gap: 6vw; align-items: start; }
 .web-visual { display: grid; gap: 20px; }
 .web-visual--offset { margin-top: 16vw; }
-.web-visual img { aspect-ratio: 4/3; object-fit: cover; background: #eee; }
-.web-visual div { display: grid; grid-template-columns: 46px 1fr; gap: 10px; border-top: 1px solid; padding-top: 15px; }
+.web-visual .project-thumb { aspect-ratio: 4/3; }
+.web-visual .project-thumb img { object-fit: contain; }
+.web-visual .project-line { display: grid; grid-template-columns: 46px 1fr; gap: 10px; border-top: 1px solid; padding-top: 15px; }
 .web-visual span, .web-visual p { font-size: 10px; letter-spacing: .1em; }
-.web-visual h3 { font-size: clamp(30px, 4vw, 70px); font-weight: 500; letter-spacing: -.055em; }
+.web-visual h3 { font-family: "Lexend", sans-serif; font-size: clamp(20px, 2vw, 30px); font-weight: 600; line-height: 1.1; letter-spacing: -.035em; }
 .web-visual p { grid-column: 2; color: var(--muted); }
 .project-index { margin-top: clamp(100px, 14vw, 240px); border-top: 1px solid var(--ink); }
 .project-index a { display: grid; grid-template-columns: 56px 1fr minmax(180px, .55fr) 24px; gap: 24px; align-items: center; padding: 24px 0; border-bottom: 1px solid var(--line); transition: padding .3s var(--ease), background .3s; }
 .project-index a:hover { padding-inline: 14px; background: var(--paper); }
 .project-index span, .project-index em { color: var(--muted); font-size: 11px; font-style: normal; letter-spacing: .08em; }
-.project-index strong { font-size: clamp(23px, 3vw, 52px); font-weight: 500; letter-spacing: -.04em; }
+.project-index strong { font-family: "Lexend", sans-serif; font-size: clamp(20px, 2vw, 30px); font-weight: 600; letter-spacing: -.03em; }
 .all-projects-link { display: flex; justify-content: space-between; margin-top: 50px; padding: 20px 0; border-bottom: 1px solid; font-size: 12px; letter-spacing: .12em; }
 
-.uiux { background: #dedede; }
-.uiux-stories { display: grid; gap: clamp(100px, 14vw, 240px); }
-.uiux-story { display: grid; align-items: end; gap: 6vw; }
-.uiux-story--dongwon { grid-template-columns: .55fr 1.45fr; }
-.uiux-story--volvo { grid-template-columns: 1.5fr .5fr; }
-.uiux-story img { background: #fff; }
-.story-copy { display: grid; gap: 24px; }
-.story-copy span { font-size: 10px; letter-spacing: .12em; }
-.story-copy h3 { font-size: clamp(48px, 7vw, 130px); font-weight: 500; line-height: .82; letter-spacing: -.07em; }
-.story-copy p { max-width: 420px; color: #666; font-size: 16px; line-height: 1.6; }
+.project-cta { display: inline-flex; justify-self: start; align-items: center; gap: 9px; width: fit-content; margin-top: 8px; padding: 10px 14px; border: 1px solid currentColor; border-radius: 999px; font-family: "Lexend", sans-serif; font-size: clamp(8px, .85vw, 14px); font-weight: 500; line-height: 1; transition: color .3s ease, background .3s ease; }
+.project-cta i { font-style: normal; transition: transform .3s ease; }
+.project-cta:hover { color: #fff; background: #111; }
+.project-cta:hover i { transform: translate(3px, -3px); }
+.project-cta--light { margin-top: 28px; color: #fff; }
+.project-cta--light:hover { color: #08090d; background: #fff; }
 .dashboard-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 3vw; }
 .dashboard-pair article:nth-child(2) { margin-top: 10vw; }
 .dashboard-pair img { aspect-ratio: 16/9; object-fit: cover; background: #fff; }
-.dashboard-pair h3 { margin-top: 20px; font-size: clamp(24px, 3vw, 50px); font-weight: 500; letter-spacing: -.05em; }
+.dashboard-pair h3 { margin-top: 20px; font-family: "Lexend", sans-serif; font-size: clamp(20px, 2vw, 30px); font-weight: 600; letter-spacing: -.035em; }
 .dashboard-pair p { margin-top: 6px; color: #666; }
 .sub-links { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: clamp(90px, 12vw, 190px); }
 .sub-links a { display: flex; justify-content: space-between; padding: 20px 0; border-top: 1px solid; border-bottom: 1px solid; font-size: 12px; letter-spacing: .1em; }
 
-.ai { background: #07080d; color: #fff; }
-.ai .section-intro { color: #aeb2c0; }
-.harubi-hero { background: #11131b; }
-.harubi-hero img { aspect-ratio: 3/2; object-fit: cover; }
-.harubi-sequence { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 2px; }
-.harubi-sequence img { aspect-ratio: 16/9; object-fit: cover; }
-.harubi-meta { margin-top: 28px; color: #898e9d; font-size: 10px; letter-spacing: .14em; }
+/* PRODUCT UI/UX — immersive mockup backgrounds with readable HTML overlay */
+.uiux { background: #dedede; }
+.uiux-stories { display: grid; gap: clamp(28px, 4vw, 72px); }
+.uiux-story { position: relative; isolation: isolate; display: flex; align-items: center; min-height: clamp(680px, 92svh, 1050px); overflow: hidden; border-radius: 10px; background: #101216; color: #fff; }
+.uiux-story .story-visual { position: absolute; z-index: -2; inset: 0; display: block; overflow: hidden; }
+.uiux-story .story-visual img { width: 100%; height: 100%; object-fit: cover; object-position: 64% center; transition: transform .9s var(--ease); }
+.uiux-story:hover .story-visual img { transform: scale(1.015); }
+.uiux-story .story-shade { position: absolute; z-index: -1; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(0,0,0,.98) 0%, rgba(0,0,0,.91) 26%, rgba(0,0,0,.67) 42%, rgba(0,0,0,.1) 72%); }
+.uiux-story .story-content { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: clamp(28px, 3.5vw, 54px); width: min(44%, 610px); min-width: 350px; padding: clamp(36px, 5vw, 92px); }
+.uiux-story .story-intro { display: grid; gap: 12px; }
+.uiux-story .story-number { margin-bottom: 10px; font-family: "Lexend", sans-serif; font-size: 12px; font-weight: 600; }
+.uiux-story .story-intro h3 { font-family: "Lexend", sans-serif; font-size: clamp(26px, 2.55vw, 42px); font-weight: 500; line-height: 1.12; letter-spacing: -.045em; }
+.uiux-story .story-subtitle { font-family: "Lexend", sans-serif; font-size: clamp(16px, 1.3vw, 23px); font-weight: 400; line-height: 1.25; }
+.uiux-story .story-description { margin-top: clamp(12px, 2vw, 26px); font-size: clamp(10px, 0.8vw, 17px); line-height: 1.75; color: rgba(255,255,255,.88); overflow-wrap: anywhere; }
+.uiux-story .story-meta { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 20px 28px; width: 100%; margin: 0; }
+.uiux-story .story-meta div { min-width: 0; }
+.uiux-story .story-meta dt { margin-bottom: 8px; font-family: "Lexend", sans-serif; font-size: 11px; font-weight: 600; }
+.uiux-story .story-meta dd { margin: 0; color: rgba(255,255,255,.77); font-size: 10px; line-height: 1.5; overflow-wrap: anywhere; }
+.uiux-story .project-cta { margin: 0; color: #fff; }
+.uiux-story .project-cta:hover { color: #111; background: #fff; }
+/* Per-project focal point and tone; images remain actual portfolio assets. */
+.uiux-story--hyundai .story-visual img { object-position: 79% center; }
+.uiux-story--volvo { background: #121a2a; }
+.uiux-story--volvo .story-visual img { object-position: 87% center; }
+.uiux-story--volvo-two { background: #111a25; }
+.uiux-story--volvo-two .story-visual img { object-position: 65% center; }
+.uiux-story--dongwon { background: #d9e6ed; }
+/* VOLVO 02 and DONGWON: right-side copy, with the image emphasized on the left. */
+.uiux-story--volvo-two,
+.uiux-story--dongwon { justify-content: flex-end; }
+.uiux-story--volvo-two .story-content,
+.uiux-story--dongwon .story-content { margin-left: auto; }
+.uiux-story--volvo-two .story-shade { background: linear-gradient(270deg, rgba(0,0,0,.97) 0%, rgba(0,0,0,.9) 27%, rgba(0,0,0,.58) 46%, rgba(0,0,0,.06) 78%); }
+.uiux-story--dongwon .story-shade { background: linear-gradient(270deg, rgba(13,27,39,.97) 0%, rgba(13,27,39,.89) 30%, rgba(13,27,39,.42) 57%, rgba(13,27,39,.05) 85%); }
+.uiux-story--volvo-two .story-visual img { object-position: 20% center; }
+.uiux-story--dongwon .story-visual img { object-position: 48% center; }
+@media (max-width: 1100px) {
+  .uiux-story .story-content { width: 55%; min-width: 0; }
+  .uiux-story .story-shade { background: linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.83) 38%, rgba(0,0,0,.17) 100%); }
+  .uiux-story--volvo-two .story-shade,
+  .uiux-story--dongwon .story-shade { background: linear-gradient(270deg, rgba(13,20,30,.96) 0%, rgba(13,20,30,.83) 38%, rgba(13,20,30,.17) 100%); }
+}
+@media (max-width: 767px) {
+  .uiux-stories { gap: 26px; }
+  .uiux-story { min-height: 0; display: flex; flex-direction: column; align-items: stretch; }
+  .uiux-story .story-visual { position: relative; z-index: 0; width: 100%; aspect-ratio: 16 / 10; background: #fff; }
+  .uiux-story .story-visual img { object-fit: contain; object-position: center; }
+  .uiux-story .story-shade { display: none; }
+  .uiux-story .story-content { width: 100%; padding: 30px 24px 38px; gap: 28px; }
+  .uiux-story .story-intro h3 { font-size: clamp(23px, 6.4vw, 32px); }
+  .uiux-story .story-description { margin-top: 8px; font-size: 10px; }
+  .uiux-story .story-meta { gap: 18px; }
+}
+
+/* HARUBI — desktop uses the supplied, already typeset showcase image. */
+.ai--harubi { padding: 0; background: #000; color: #fff; scroll-margin-top: var(--header-h); }
+/* HARUBI — editorial split showcase. All copy remains real HTML; images are existing project assets. */
+.ai--harubi { padding: 0; background: #000; padding: clamp(120px, 12vw, 230px) var(--page-x); }
+.harubi-showcase { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, 41%) minmax(0, 59%); align-items: center; min-height: max(780px, 100svh); gap: clamp(22px, 3vw, 56px); overflow: hidden; background: #000; color: #fff; }
+.harubi-showcase__copy { position: relative; z-index: 2; max-width: 540px; }
+.harubi-showcase__number { margin-bottom: 24px; font-family: "Lexend", sans-serif; font-size: 12px; font-weight: 600; }
+.harubi-showcase__copy h2 { font-family: "Lexend", sans-serif; font-size: clamp(36px, 3vw, 56px); font-weight: 500; line-height: 1.08; letter-spacing: -.04em; }
+.harubi-showcase__subtitle { margin-top: 6px; font-family: "Lexend", sans-serif; font-size: clamp(15px, 1.3vw, 22px); font-weight: 400; line-height: 1.4; }
+.harubi-showcase__description { display: grid; gap: 16px; max-width: 490px; margin-top: clamp(25px, 3vw, 50px); color: #dedee6; font-size: clamp(13px, 1vw, 16px); line-height: 1.75; overflow-wrap: anywhere; }
+.harubi-showcase__meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 25px 22px; margin: clamp(38px, 5vw, 78px) 0 0; }
+.harubi-showcase__meta dt { margin-bottom: 9px; font-family: "Lexend", sans-serif; font-size: 12px; font-weight: 600; }
+.harubi-showcase__meta dd { margin: 0; color: #c4c4cd; font-size: 12px; line-height: 1.55; }
+.harubi-showcase__copy .project-cta { margin-top: 36px; }
+.harubi-showcase__visual { position: relative; display: block; width: 100%; min-height: 460px; aspect-ratio: 1.12; margin-bottom: 150px; margin-top: -23px; }
+.harubi-showcase__visual img { position: absolute; width: 78%; height: auto; max-height: 82%; object-fit: contain; filter: drop-shadow(0 25px 28px rgba(0,0,0,.28)); transition: transform .6s var(--ease); }
+.harubi-showcase__visual-main { z-index: 2; top: 4%; left: 0; transform: rotate(-5deg); }
+.harubi-showcase__visual-accent { z-index: 1; right: -2%; bottom: 3%; transform: rotate(4deg); }
+.harubi-showcase__visual:hover .harubi-showcase__visual-main { transform: rotate(-3deg) translateY(-6px); }
+.harubi-showcase__visual:hover .harubi-showcase__visual-accent { transform: rotate(3deg) translateY(-4px); }
+@media (max-width: 1023px) {
+  .harubi-showcase { grid-template-columns: 1fr 1fr; min-height: 700px; }
+  .harubi-showcase__visual { min-height: 360px; }
+  .harubi-showcase__visual img { width: 90%; }
+}
+@media (max-width: 767px) {
+  .harubi-showcase { grid-template-columns: 1fr; min-height: 0; gap: 28px; padding: 100px var(--page-x) 80px; }
+  .harubi-showcase__copy { max-width: none; }
+  .harubi-showcase__copy h2 { font-size: 38px; }
+  .harubi-showcase__description { font-size: 13px; }
+  .harubi-showcase__meta { margin-top: 36px; }
+  .harubi-showcase__visual { grid-row: 2; min-height: 0; aspect-ratio: 1.3; }
+  .harubi-showcase__visual img { width: 76%; max-height: 88%; }
+}
 
 .graphic { background: var(--paper); }
-.graphic-collage { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(70px, 9vw, 160px) 24px; }
+.graphic-category + .graphic-category { margin-top: clamp(100px, 13vw, 210px); }
+.graphic-category-head { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: clamp(42px, 6vw, 90px); padding-top: 20px; border-top: 1px solid; }
+.graphic-category-head h3 { font-family: "Lexend", sans-serif; font-size: clamp(20px, 2vw, 30px); font-weight: 600; letter-spacing: -.03em; }
+.graphic-category-head p { max-width: 440px; color: var(--muted); line-height: 1.5; }
+.graphic-collage { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(48px, 7vw, 110px) 24px; }
+.graphic-collage--online .graphic-work--portrait, .graphic-collage--offline .graphic-work--portrait { grid-column: 9 / 13; margin-top: clamp(50px, 8vw, 130px); }
 .graphic-work { display: grid; gap: 18px; }
 .graphic-work--hero { grid-column: 1 / 8; }
 .graphic-work--portrait { grid-column: 9 / 13; margin-top: 14vw; }
 .graphic-work--small { grid-column: 2 / 6; }
 .graphic-work--wide { grid-column: 6 / 13; margin-top: 8vw; }
-.graphic-work img { aspect-ratio: 4/3; object-fit: cover; background: #ddd; }
-.graphic-work--portrait img { aspect-ratio: 3/4; }
+.graphic-work .project-thumb { aspect-ratio: auto; }
+.graphic-work .project-thumb img { height: auto; max-height: 72vh; object-fit: contain; }
 .graphic-work div { border-top: 1px solid; padding-top: 14px; }
 .graphic-work span { font-size: 10px; letter-spacing: .1em; }
-.graphic-work h3 { margin-top: 12px; font-size: clamp(28px, 4vw, 70px); font-weight: 500; letter-spacing: -.055em; }
+.graphic-work h3 { margin-top: 12px; font-family: "Lexend", sans-serif; font-size: clamp(20px, 2vw, 30px); font-weight: 600; line-height: 1.1; letter-spacing: -.035em; }
 
 .contact { min-height: 100vh; padding: clamp(120px, 14vw, 230px) var(--page-x) 32px; display: flex; flex-direction: column; background: var(--black); color: #fff; scroll-margin-top: var(--header-h); }
-.contact h2 { margin: clamp(70px, 9vh, 120px) 0 auto; font-size: clamp(62px, 11vw, 210px); font-weight: 450; line-height: .78; letter-spacing: -.08em; }
+.contact h2 { margin: clamp(70px, 9vh, 120px) 0 auto; font-size: clamp(54px, 5vw, 172px); line-height: .82; letter-spacing: -.04em; }
 .contact-row { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-top: 90px; padding: 20px 0; border-top: 1px solid #444; }
 .contact-row span { color: #777; font-size: 11px; letter-spacing: .12em; }
-.contact-row a { font-size: clamp(22px, 3vw, 54px); letter-spacing: -.045em; }
+.contact-row a { font-size: clamp(22px, 2vw, 54px); letter-spacing: -.045em; }
 .contact footer { display: flex; justify-content: space-between; margin-top: 80px; padding-top: 24px; border-top: 1px solid #222; color: #777; font-size: 10px; letter-spacing: .1em; }
 
 .reveal { opacity: 0; transform: translateY(44px); transition: opacity .85s var(--ease), transform .85s var(--ease); }
@@ -151,8 +247,7 @@ h1, h2, h3, p, figure { margin: 0; }
   .featured--dongwon { grid-column: 1 / 10; }
   .featured--bose { grid-column: 7 / 13; }
   .project-caption { grid-template-columns: 68px 1fr; }
-  .uiux-story--dongwon, .uiux-story--volvo { grid-template-columns: 1fr; }
-  .uiux-story--volvo img { order: 2; }
+  .uiux-story--hyundai, .uiux-story--dongwon, .uiux-story--volvo, .uiux-story--volvo-two, .uiux-story--sl { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 767px) {
@@ -168,7 +263,7 @@ h1, h2, h3, p, figure { margin: 0; }
   .menu-toggle[aria-expanded="true"] > span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
   .section { padding-block: 105px; }
   .section-head { margin-bottom: 72px; }
-  .section-head h2 { font-size: clamp(58px, 18vw, 88px); }
+  .section-head h2, .display-title { font-size: clamp(46px, 14vw, 68px); }
   .section-intro { font-size: 18px; }
   .intro-mark { top: 26px; }
   .intro-title { font-size: clamp(46px, 14vw, 64px); }
@@ -177,11 +272,13 @@ h1, h2, h3, p, figure { margin: 0; }
   .scroll-cue { display: none; }
   .about { grid-template-columns: 1fr; gap: 70px; padding: 110px 20px 90px; align-items: start; }
   .about-profile { max-width: none; }
-  .about-profile img { width: min(72vw, 279px); }
+  .about-profile img { width: min(72vw, 230px); }
   .about-info h2 { font-size: 23vw; }
   .about-contact { grid-template-columns: 1fr; }
   .about-facts article { grid-template-columns: 1fr; gap: 12px; }
   .featured-grid, .graphic-collage { display: block; }
+  .works-intro { min-height: auto; grid-template-columns: 1fr; }
+  .works-manifest { align-self: auto; }
   .featured + .featured, .graphic-work + .graphic-work { margin-top: 90px; }
   .featured--bose, .featured--edm, .graphic-work--portrait, .graphic-work--wide { margin-top: 90px; }
   .project-caption { grid-template-columns: 54px 1fr; }
@@ -190,9 +287,25 @@ h1, h2, h3, p, figure { margin: 0; }
   .project-index a { grid-template-columns: 36px 1fr 20px; gap: 12px; }
   .project-index em { display: none; }
   .dashboard-pair, .harubi-sequence, .sub-links { grid-template-columns: 1fr; }
+  .uiux-stories { gap: 120px; }
+  .uiux-story,
+  .uiux-story--hyundai,
+  .uiux-story--volvo,
+  .uiux-story--volvo-two,
+  .uiux-story--dongwon { align-items: stretch; }
+  .uiux-story .project-thumb,
+  .uiux-story--volvo .project-thumb,
+  .uiux-story--volvo-two .project-thumb,
+  .uiux-story--dongwon .project-thumb { width: 100%; }
+  .uiux-story .story-copy,
+  .uiux-story--hyundai .story-copy,
+  .uiux-story--volvo .story-copy,
+  .uiux-story--volvo-two .story-copy,
+  .uiux-story--dongwon .story-copy { align-self: stretch; width: 100%; margin-right: 0; margin-left: 0; }
   .dashboard-pair article:nth-child(2) { margin-top: 50px; }
   .harubi-sequence { gap: 2px; }
-  .graphic-work--portrait img { aspect-ratio: 4/3; }
+  .graphic-work--portrait .project-thumb { aspect-ratio: 4/3; }
+  .graphic-category-head { grid-template-columns: 1fr; }
   .contact-row { flex-direction: column; align-items: flex-start; }
 }
 
@@ -200,4 +313,216 @@ h1, h2, h3, p, figure { margin: 0; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
+}
+
+
+/* WEB project image lightbox */
+.web-modal[hidden] { display: none !important; }
+.web-modal { position: fixed; z-index: 1000; inset: 0; display: grid; place-items: center; padding: clamp(10px, 3vw, 36px); }
+.web-modal__backdrop { position: absolute; inset: 0; background: rgba(0,0,0,.86); backdrop-filter: blur(8px); }
+.web-modal__panel { position: relative; width: min(100%, 1250px); max-height: calc(100dvh - 2 * clamp(10px, 3vw, 36px)); overflow-y: auto; overscroll-behavior: contain; background: #f6f6f3; color: #111; border-radius: 10px; outline: none; box-shadow: 0 25px 100px #0007; }
+.web-modal__header { position: sticky; z-index: 2; top: 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: clamp(18px, 3vw, 34px); background: rgb(246 246 243 / 96%); border-bottom: 1px solid #ddd; backdrop-filter: blur(12px); }
+.web-modal__eyebrow { font: 500 10px Lexend, sans-serif; letter-spacing: .12em; color: #777; }
+.web-modal__header h2 { margin: 8px 0 3px; font: 600 clamp(22px, 3vw, 36px)/1.1 Lexend, sans-serif; }
+.web-modal__header p:last-child { font-size: 12px; color: #666; }
+.web-modal__close { flex: none; border: 1px solid #111; background: transparent; border-radius: 999px; padding: 10px 16px; font: 500 12px Lexend, sans-serif; cursor: pointer; }
+.web-modal__close:hover { background: #111; color: #fff; }
+.web-modal__gallery { display: grid; gap: 16px; padding: clamp(12px, 2.5vw, 32px); }
+.web-modal__gallery img { width: 100%; height: auto; object-fit: contain; border-radius: 6px; background: #fff; }
+.web-modal__gallery .web-modal__error { padding: 25px; color: #555; text-align: center; }
+body.web-modal-open { overflow: hidden; }
+@media (max-width: 767px) { .web-modal__header { align-items: flex-start; } .web-modal__close { padding: 8px 11px; font-size: 10px; } }
+@media (prefers-reduced-motion: no-preference) { .web-modal__panel { animation: web-modal-appear .2s ease-out; } @keyframes web-modal-appear { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } } }
+
+
+/* Responsive refinements — tablet, mobile and small landscape screens */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .about { grid-template-columns: minmax(190px, .8fr) minmax(0, 1.2fr); gap: clamp(30px, 5vw, 70px); }
+  .about-info h2 { font-size: clamp(68px, 9vw, 115px); }
+  .about-contact { gap: 18px; }
+  .about-contact p { min-width: 0; overflow-wrap: anywhere; }
+  .about-facts article { grid-template-columns: 110px minmax(0, 1fr); gap: 16px; }
+  .works-intro { grid-template-columns: minmax(0, 1fr) auto; }
+  .display-title { font-size: clamp(62px, 7.2vw, 100px); }
+  .uiux-story { min-height: 650px; }
+  .uiux-story .story-content { width: min(59%, 590px); padding: clamp(26px, 3vw, 48px); }
+  .uiux-story .story-description { font-size: clamp(12px, 1.05vw, 15px); line-height: 1.6; }
+  .uiux-story .story-meta dd { font-size: 11px; }
+  .harubi-showcase { min-height: 650px; gap: 24px; }
+  .harubi-showcase__visual { min-width: 0; }
+}
+
+@media (max-width: 767px) {
+  :root { --page-x: clamp(18px, 5vw, 28px); }
+  html { scroll-padding-top: var(--header-h); }
+  .site-header { height: var(--header-h); }
+  .site-nav { position: fixed; top: 0; left: 0; width: 100vw; height: 100dvh; inset: auto; padding: calc(var(--header-h) + 32px) var(--page-x) 40px; overflow-y: auto; }
+  .site-header.is-dark .site-nav, .site-nav { background: #060606; color: #fff; }
+  .menu-toggle[aria-expanded="true"] { color: #fff; }
+  .site-nav a { overflow-wrap: anywhere; }
+  .section { padding: 88px var(--page-x); }
+  .section-head { gap: 18px; margin-bottom: 42px; }
+  .section-head h2, .display-title { font-size: clamp(40px, 11.5vw, 70px); line-height: .94; overflow-wrap: anywhere; }
+  .eyebrow { font-size: 10px; }
+  .intro { min-height: 540px; }
+  .intro-mark { width: 180px; max-width: 65vw; text-align: center; }
+  .intro-mark img { margin: auto; }
+  .intro-title { font-size: clamp(48px, 13.5vw, 76px); max-width: calc(100vw - 32px); }
+  .intro-skills { left: var(--page-x); bottom: 24px; font-size: clamp(10px, 2.7vw, 13px); line-height: 1.35; }
+  .intro-name { right: var(--page-x); bottom: 24px; font-size: clamp(10px, 2.8vw, 13px); }
+  .about { gap: 46px; padding: 95px var(--page-x) 84px; }
+  .about-profile img { margin: 28px 0 18px; width: min(55vw, 220px); border-radius: 24px; }
+  .about-name { max-width: 260px; font-size: 15px; }
+  .about-info h2 { font-size: clamp(68px, 19vw, 110px); }
+  .about-contact { margin: 42px 0; gap: 24px; }
+  .about-contact p { gap: 9px; font-size: clamp(15px, 4vw, 19px); overflow-wrap: anywhere; }
+  .about-facts article { padding: 18px 0; }
+  .works-intro { gap: 32px; min-height: 70svh; }
+  .works-manifest { min-width: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 18px; font-size: 10px; }
+  .uiux-stories { gap: 24px; }
+  .uiux-story { min-height: 0; border-radius: 10px; }
+  .uiux-story .story-visual { flex: none; aspect-ratio: 16 / 10; }
+  .uiux-story .story-visual img,
+  .uiux-story--hyundai .story-visual img,
+  .uiux-story--volvo .story-visual img,
+  .uiux-story--volvo-two .story-visual img,
+  .uiux-story--dongwon .story-visual img { object-fit: contain; object-position: center; }
+  .uiux-story .story-content,
+  .uiux-story--volvo-two .story-content,
+  .uiux-story--dongwon .story-content { flex: none; width: 100%; min-width: 0; margin: 0; padding: clamp(22px, 5vw, 32px); gap: 24px; }
+  .uiux-story .story-intro { gap: 8px; }
+  .uiux-story .story-number { margin-bottom: 4px; font-size: 10px; }
+  .uiux-story .story-intro h3 { font-size: clamp(21px, 5.7vw, 29px); }
+  .uiux-story .story-subtitle { font-size: clamp(13px, 3.7vw, 17px); }
+  .uiux-story .story-description { font-size: clamp(12px, 3.2vw, 14px); line-height: 1.65; }
+  .uiux-story .story-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 12px; }
+  .uiux-story .story-meta dt { font-size: 10px; }
+  .uiux-story .story-meta dd { font-size: 11px; }
+  .web-editorial { gap: 46px; }
+  .web-visual { gap: 14px; }
+  .web-visual .project-line { grid-template-columns: 32px minmax(0, 1fr); }
+  .web-visual h3 { font-size: clamp(18px, 5vw, 25px); overflow-wrap: anywhere; }
+  .ai--harubi { padding: 88px var(--page-x); }
+  .harubi-showcase { display: flex; flex-direction: column; align-items: stretch; gap: 30px; padding: 0; min-height: 0; overflow: visible; }
+  .harubi-showcase__copy { width: 100%; }
+  .harubi-showcase__copy h2 { font-size: clamp(32px, 9vw, 44px); }
+  .harubi-showcase__description { font-size: 13px; line-height: 1.65; }
+  .harubi-showcase__meta { gap: 18px 12px; }
+  .harubi-showcase__meta dt, .harubi-showcase__meta dd { font-size: 11px; }
+  .harubi-showcase__visual { flex: none; width: 100%; min-height: 0; aspect-ratio: 1.2; }
+  .harubi-showcase__visual img { width: 78%; max-height: 90%; }
+  .graphic-category + .graphic-category { margin-top: 90px; }
+  .graphic-category-head { gap: 12px; margin-bottom: 28px; }
+  .graphic-category-head h3 { font-size: 21px; }
+  .graphic-category-head p { font-size: 13px; }
+  .graphic-collage { display: grid; grid-template-columns: 1fr; gap: 42px; }
+  .graphic-collage .graphic-work,
+  .graphic-collage .graphic-work--hero,
+  .graphic-collage .graphic-work--portrait { grid-column: 1; margin-top: 0; min-width: 0; }
+  .graphic-work + .graphic-work { margin-top: 0; }
+  .graphic-work h3 { font-size: 20px; }
+  .graphic-work .project-thumb img { max-height: none; }
+  .contact { min-height: 85svh; padding: 95px var(--page-x) 28px; }
+  .contact h2 { margin: 56px 0 auto; font-size: clamp(44px, 12vw, 72px); overflow-wrap: anywhere; }
+  .contact-row { margin-top: 70px; gap: 12px; }
+  .contact-row a { max-width: 100%; font-size: clamp(17px, 5vw, 25px); overflow-wrap: anywhere; }
+  .contact footer { margin-top: 65px; gap: 18px; flex-wrap: wrap; }
+  .web-modal { padding: 8px; }
+  .web-modal__panel { max-height: calc(100dvh - 16px); }
+  .web-modal__header { padding: 15px; gap: 10px; }
+  .web-modal__header h2 { font-size: clamp(19px, 5vw, 26px); }
+  .web-modal__gallery { padding: 10px; gap: 10px; }
+}
+
+@media (max-width: 380px) {
+  .intro-skills { font-size: 10px; }
+  .intro-name { font-size: 10px; }
+  .works-manifest { font-size: 9px; }
+  .uiux-story .story-meta { grid-template-columns: 1fr; }
+  .harubi-showcase__meta { grid-template-columns: 1fr; }
+  .web-modal__close { padding: 8px; font-size: 10px; }
+}
+
+@media (max-height: 550px) and (orientation: landscape) {
+  .intro { min-height: 400px; }
+  .intro-skills { font-size: 10px; }
+  .about { min-height: 0; }
+}
+
+/* UI/UX mobile image presentation — full-bleed artwork stage, not a white letterbox. */
+@media (max-width: 767px) {
+  .uiux-story { overflow: hidden; background: #11151c; }
+  .uiux-story .story-visual {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+    overflow: hidden;
+    background: #11151c;
+  }
+  .uiux-story .story-visual::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -20px;
+    background-image: var(--mobile-artwork);
+    background-position: center;
+    background-size: cover;
+    filter: blur(22px) brightness(.46) saturate(.8);
+    transform: scale(1.12);
+    pointer-events: none;
+  }
+  .uiux-story .story-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to bottom, transparent 65%, rgba(10,13,20,.26));
+    pointer-events: none;
+  }
+  .uiux-story .story-visual img,
+  .uiux-story--hyundai .story-visual img,
+  .uiux-story--volvo .story-visual img,
+  .uiux-story--volvo-two .story-visual img,
+  .uiux-story--dongwon .story-visual img {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    padding: clamp(8px, 2.5vw, 16px);
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,.25));
+    transform: none;
+  }
+  .uiux-story:hover .story-visual img { transform: none; }
+  .uiux-story--hyundai { --mobile-artwork: url("../img/common/hyundai-project-cover.png"); }
+  .uiux-story--volvo { --mobile-artwork: url("../img/uiux/volvo-powerbi-project-cover.png"); }
+  .uiux-story--volvo-two { --mobile-artwork: url("../img/uiux/volvo-powerbi-delivery-cover.png"); }
+  .uiux-story--dongwon { --mobile-artwork: url("../img/common/dongwon-project-cover.png"); }
+  .uiux-story .story-content { background: #11151c; }
+}
+@media (max-width: 420px) {
+  .uiux-story .story-visual { aspect-ratio: 5 / 4; }
+}
+
+/* HARUBI: secondary artwork as the full section background */
+.ai--harubi {
+  background-image: linear-gradient(90deg, rgba(0,0,0,.88) 0%, rgba(0,0,0,.70) 42%, rgba(0,0,0,.42) 100%), url("../img/harubi/harubi-visual-01.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.harubi-showcase { background: transparent; }
+.harubi-showcase__visual-main { left: 10%; }
+@media (max-width: 767px) {
+  .ai--harubi {
+    background-image: linear-gradient(180deg, rgba(0,0,0,.86), rgba(0,0,0,.73)), url("../img/harubi/harubi-visual-01.png");
+    background-position: center;
+  }
+  .harubi-showcase__visual-main { left: 10%; }
 }

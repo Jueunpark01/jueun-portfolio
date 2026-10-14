@@ -2,121 +2,24 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>web-page</title>
-  <!-- UIkit CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
-  <!-- UIkit JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
-  <!--style.css-->
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/script.js" defer></script> 
-  <!--ionicon-->
-  <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-          const tempDiv = document.createElement('div');
-          tempDiv.innerHTML = data.trim();
-          document.body.insertBefore(tempDiv.firstChild, document.body.firstChild);
-          addMenuToggleEvent();
-        })
-        .catch(error => console.error('Error loading header:', error));
-    });
-
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BOSE 웹 디자인 및 퍼블리싱 프로젝트">
+  <title>BOSE Web Project — Park Jueun</title>
+  <link rel="stylesheet" href="css/project.css">
 </head>
-
 <body>
-
-
-  <div class="container">
-    <div class="inner">
-      <header></header>
-      <section>
-        <div class="slide-nav">
-          <div class="webpage-back">
-            <a href="webpage-inner-nikevideo.html">
-              <ion-icon name="arrow-back"></ion-icon>
-              <p>NIKE VIDEO + PRODUCT Randing Page</p>
-            </a>
-
-          </div>
-          <div class="webpage-current">
-            <a href="">home</a>
-            <ion-icon name="arrow-dropright"></ion-icon>
-            <a href="">web page</a>
-            <ion-icon name="arrow-dropright"></ion-icon>
-            <a href="#none">BOSE</a>
-            <h2>BOSE WEB PAGE</h2>
-          </div>
-          <div class="webpage-forward">
-            <a href="webpage-inner-odense.html">
-              <p>ODENSE Randing Page</p>
-              <ion-icon name="arrow-forward"></ion-icon>
-            </a>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="my-slideshow uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow="animation: auto;autoplay: true;autoplay-interval: 3000;">
-          <!--autoplay: true;autoplay-interval: 3000-->
-          <ul class="uk-slideshow-items">
-            <img src="images/webpage-bose1.png" alt="bose">
-            <img src="images/webpage-bose2.png" alt="bose">
-            <img src="images/webpage-bose3.png" alt="bose">
-            <!--<li>
-              <a href="#none"></a>
-            </li>
-            <li>
-              <a href="#none"></a>
-            </li>
-            <li>
-              <a href="#none"></a>
-            </li>-->
-          </ul>
-
-          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
-        </div>
-      </section>
-
-      <section class="project-explanation">
-        <article>
-          <div class="project-description">
-            <h4>'BOSE' Website</h4>
-            웹사이트 'BOSE'의 landing page를 만듬<br>
-            'BOSE'는 헤드셋, 이어폰, 스피커 등의 음향기기 브랜드입니다. 애플과 비슷한 홈페이지 느낌의 외국 브랜드로 전체적으로 심플한 느낌을 주는것이 보기 좋은 홈페이지라는 생각이 들었습니다.<br>하드코딩과 ui-kit를 함께 사용하여 제작하였습니다.
-            <br><br>
-            <span>[ 기여도 100% ]</span>
-          </div>
-        </article>
-        <article>
-          <div class="project-details">
-            <ul>
-              <li><b>name</b> BOSE</li>
-              <li><b>date</b> 2019 08 18</li>
-              <li><b>skills</b> DESIGN + BRAND + WEBSITE + HTML + CSS + jQuery + Script</li>
-              <li><b>project URL</b>
-                
-                <a class="details-btn uk-button uk-button-default" href="#modal-full" uk-toggle>CLICK !</a>
-
-                <div id="modal-full" class="uk-modal-full" uk-modal>
-                    <div class="my-modal uk-modal-dialog modal-sample">
-                        <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
-                          <iframe src="portfolio/webpage/bose_landing_190701/index.html" frameborder="0"></iframe>
-                    </div>
-                </div>
-                
-                <a class="btn-url-link" href="portfolio/webpage/bose_landing_190701/index.html">( http://www.bose.com )</a>
-              </li>
-            </ul>
-          </div>
-        </article>
-      </section>
-    </div>
-  </div>
-
-</body></html>
+  <header class="project-header"><a href="index.html" aria-label="메인 포트폴리오"><img src="img/Logo-jueun-b.png" alt="JUEUN"></a><nav><a href="index.html#works">WORK</a><a href="index.html#about">ABOUT</a><a href="index.html#contact">CONTACT</a></nav></header>
+  <main class="project-detail">
+    <header class="detail-hero"><p class="project-kicker">01 / WEB DESIGN &amp; PUBLISHING</p><h1>BOSE.</h1><figure class="detail-hero-media"><img src="img/web/webpage-bose1.png" alt="BOSE 웹사이트 대표 화면" width="960" height="685"></figure><div class="detail-summary"><p>웹사이트 BOSE의 landing page를 제작했습니다. 심플한 브랜드 인상을 유지하며 하드코딩과 UIkit를 함께 사용했습니다.</p><dl><div><dt>DATE</dt><dd>2019.08.18</dd></div><div><dt>ROLE</dt><dd>기여도 100%</dd></div><div><dt>SKILLS</dt><dd>DESIGN · BRAND · HTML · CSS · jQuery · JavaScript</dd></div></dl></div></header>
+    <section class="detail-section"><div class="detail-section-head"><h2>WEBSITE SHOWCASE</h2><p>메인 화면과 제품 콘텐츠를 실제 화면 비율로 보여주는 웹 디자인 쇼케이스입니다.</p></div><div class="detail-gallery">
+      <figure class="project-thumb detail-image detail-image--wide"><img src="img/web/webpage-bose1.png" alt="BOSE 웹사이트 메인 디자인" width="1200" height="900"></figure>
+      <figure class="project-thumb detail-image"><img src="img/web/webpage-bose2.png" alt="BOSE 웹사이트 상세 디자인" width="1200" height="900" loading="lazy"></figure>
+      <figure class="project-thumb detail-image detail-image--offset"><img src="img/web/webpage-bose3.png" alt="BOSE 웹사이트 제품 화면" width="1200" height="900" loading="lazy"></figure>
+    </div></section>
+    <div class="project-action"><a href="portfolio/webpage/bose_landing_190701/index.html">OPEN ORIGINAL PROJECT ↗</a></div>
+    <nav class="next-project"><span>NEXT PROJECT</span><a href="webpage-inner-neiborhood.html"><strong>NEIGHBORHOOD</strong><b>→</b></a></nav>
+    <div class="cta-row"><a class="pill-cta" href="webpage.html">BACK TO WORKS ↗</a></div>
+  </main>
+  <footer class="project-footer"><a href="webpage.html">← WEB PROJECTS</a><span>© 2026 PARK JUEUN</span></footer>
+</body>
+</html>

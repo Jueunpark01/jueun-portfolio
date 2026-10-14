@@ -1,0 +1,30 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Lexend:wght@400;500;600&display=swap");
+
+@font-face {
+  font-family: "Les Flos Chaos";
+  src: url("../font/Les%20Flos%20Chaos.otf") format("opentype");
+  font-display: swap;
+}
+
+body { font-family: "Fredoka", sans-serif; }
+.dg_design_header h1,
+.webpage-back h2 { font-family: "Les Flos Chaos", serif; font-weight: 400; }
+.dg_design_header h1 { font-size: clamp(48px, 7vw, 112px); line-height: .9; letter-spacing: -.04em; }
+.webpage-back h2 { font-size: clamp(48px, 7vw, 112px); line-height: .9; letter-spacing: -.04em; }
+.pj_design_overlay h3,
+.pj_design_info h3,
+.dg_design_info h3,
+.project-description h4 {
+  font-family: "Lexend", sans-serif;
+  font-size: clamp(20px, 2vw, 30px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -.025em;
+}
+.project-description h4 { font-size: clamp(16px, 1.5vw, 22px); }
+
+@media (max-width: 767px) {
+  .dg_design_header h1,
+  .webpage-back h2 { overflow-wrap: anywhere; }
+}
